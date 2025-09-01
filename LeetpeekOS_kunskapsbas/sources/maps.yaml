@@ -1,0 +1,86 @@
+{
+  "/l1/projekt-hub": {
+    "title": "L1: Projekt-hub",
+    "layout": "cluster",
+    "subgraphs": [
+      {"name": "Kärnprojekt", "nodes": ["mvp", "arkiv", "site"]},
+      {"name": "Styrning", "nodes": ["roadmap", "finansiering"]}
+    ],
+    "nodes": [
+      {"id": "mvp", "text": "Leetpeek MVP", "status": "progress", "link": "#/os/mvp", "tags": ["mvp", "#teams"]},
+      {"id": "arkiv", "text": "Arkiv", "status": "planned", "link": "#/os/arkiv"},
+      {"id": "site", "text": "Site", "status": "planned", "link": "#/os/site"},
+      {"id": "roadmap", "text": "Roadmap", "status": "planned", "link": "#/os/roadmap"},
+      {"id": "finansiering", "text": "Finansiering", "status": "progress", "link": "#/os/strategy/finansiering"}
+    ],
+    "connections": [
+      ["mvp", "roadmap"],
+      ["arkiv", "finansiering"],
+      ["site", "roadmap"]
+    ]
+  },
+  "/l1/marknad-hub": {
+    "title": "L1: Marknad-hub",
+    "layout": "cluster",
+    "subgraphs": [
+      {"name": "Marknadsstrategi", "nodes": ["segment", "budskap", "position"]},
+      {"name": "Exekvering", "nodes": ["kampanjer", "kanaler"]},
+      {"name": "Omvärld", "nodes": ["trender"]}
+    ],
+    "nodes": [
+      {"id": "segment", "text": "Segment", "status": "progress", "link": "#"},
+      {"id": "budskap", "text": "Budskap", "status": "planned", "link": "#"},
+      {"id": "position", "text": "Position", "status": "planned", "link": "#"},
+      {"id": "kampanjer", "text": "Kampanjer", "status": "planned", "link": "#"},
+      {"id": "kanaler", "text": "Kanaler", "status": "planned", "link": "#"},
+      {"id": "trender", "text": "Trender", "status": "planned", "link": "#"}
+    ],
+    "connections": [
+      ["segment", "kampanjer"],
+      ["trender", "segment"],
+      ["segment", "budskap"],
+      ["budskap", "kampanjer"],
+      ["position", "segment"],
+      ["kanaler", "kampanjer"]
+    ]
+  },
+  "/l1/sakerhet-drift-hub": {
+    "title": "L1: Säkerhet-Drift",
+    "layout": "cluster",
+    "subgraphs": [
+      {"name": "Policies", "nodes": ["data-policy", "sla"]},
+      {"name": "Operativa", "nodes": ["incident", "deployment"]}
+    ],
+    "nodes": [
+      {"id": "data-policy", "text": "Data policy", "status": "planned", "link": "#"},
+      {"id": "sla", "text": "SLA", "status": "planned", "link": "#"},
+      {"id": "incident", "text": "Incident", "status": "planned", "link": "#"},
+      {"id": "deployment", "text": "Deployment", "status": "planned", "link": "#"}
+    ],
+    "connections": [
+      ["incident", "deployment"],
+      ["data-policy", "sla"]
+    ]
+  },
+  "/os/arkiv/pitea-pilot": {
+    "title": "L2: Piteå-pilot",
+    "nodes": [
+      {"id": "start", "text": "Start", "status": "planned", "link": "#"},
+      {"id": "forstudie", "text": "Förstudie", "status": "progress", "link": "os/arkiv/pitea-pilot.md#forstudie"},
+      {"id": "skanning", "text": "Skanning", "status": "planned", "link": "os/arkiv/pitea-pilot.md#skanning"},
+      {"id": "driftstart", "text": "Driftstart", "status": "planned", "link": "os/arkiv/pitea-pilot.md#driftstart"},
+      {"id": "utvardering", "text": "Utvärdering", "status": "planned", "link": "os/arkiv/pitea-pilot.md#utvardering"},
+      {"id": "skalplan", "text": "Skalplan", "status": "planned", "link": "os/arkiv/pitea-pilot.md#skalplan"},
+      {"id": "finans", "text": "Finansiering", "status": "progress", "link": "#/os/strategy/finansiering"}
+    ],
+    "connections": [
+      ["start", "forstudie"],
+      ["forstudie", "skanning"],
+      ["skanning", "driftstart"],
+      ["driftstart", "utvardering"],
+      ["utvardering", "skalplan"],
+      ["skalplan", "forstudie"],
+      ["finans", "forstudie"]
+    ]
+  }
+}

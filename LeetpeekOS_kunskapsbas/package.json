@@ -1,0 +1,13 @@
+{
+  "name": "leetpeekos_kunskapsbas",
+  "version": "1.0.0",
+  "description": "Denna kunskapsbas beskriver **Leetpeek OS v1** – ett internt, statiskt och helt **Mermaid‑diagram-baserat** mini-OS för de 4 grundarna.  All implementering sker som **separata HTML-filer** med Mermaid.js. **Ingen brödtext** visas i själva webbgränssnittet – endast diagram.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
