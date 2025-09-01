@@ -1,0 +1,98 @@
+const allMaps = {
+  "index": {
+    "title": "L0: Strategisk Kompass",
+    "layout": "TD",
+    "nodes": [
+      {
+        "id": "karnan",
+        "text": "Kärnan & Position",
+        "status": "done",
+        "link": "#/l1/positionering",
+        "tags": [
+          "strategi",
+          "#airgap"
+        ]
+      },
+      {
+        "id": "projekt",
+        "text": "Projekt & Produkter",
+        "status": "progress",
+        "link": "#/l1/projekt-hub",
+        "tags": [
+          "utveckling"
+        ]
+      },
+      {
+        "id": "metodik",
+        "text": "Metodik",
+        "status": "progress",
+        "link": "#/l1/metodik",
+        "tags": [
+          "process"
+        ]
+      },
+      {
+        "id": "ekonomi",
+        "text": "Ekonomi",
+        "status": "done",
+        "link": "#/l1/ekonomi",
+        "tags": [
+          "budget"
+        ]
+      },
+      {
+        "id": "allianser",
+        "text": "Allianser",
+        "status": "progress",
+        "link": "#/l1/allianser",
+        "tags": [
+          "nätverk"
+        ]
+      },
+      {
+        "id": "struktur",
+        "text": "Struktur",
+        "status": "done",
+        "link": "#/l1/struktur",
+        "tags": [
+          "organisation"
+        ]
+      },
+      {
+        "id": "larande",
+        "text": "Lärande",
+        "status": "progress",
+        "link": "#/l1/larande",
+        "tags": [
+          "kompetens"
+        ]
+      }
+    ],
+    "connections": [
+      [
+        "karnan",
+        "projekt"
+      ],
+      [
+        "karnan",
+        "metodik"
+      ],
+      [
+        "karnan",
+        "ekonomi"
+      ],
+      [
+        "projekt",
+        "allianser"
+      ],
+      [
+        "projekt",
+        "struktur"
+      ],
+      [
+        "struktur",
+        "larande"
+      ]
+    ]
+  }
+};
