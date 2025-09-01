@@ -1,0 +1,24 @@
+:root {
+  --mermaid-font-size: 18px;
+  --mermaid-node-padding: 20px;
+}
+
+.mermaid .done > rect,
+.mermaid .done > polygon {
+  fill: #94D1BE;
+}
+
+.mermaid .progress > rect,
+.mermaid .progress > polygon {
+  fill: #FFCF56;
+}
+
+.mermaid .planned > rect,
+.mermaid .planned > polygon {
+  fill: #d3d3d3;
+}
+
+.mermaid .blocked > rect,
+.mermaid .blocked > polygon {
+  fill: #F28F8F;
+}
