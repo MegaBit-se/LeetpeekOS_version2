@@ -4,87 +4,19 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Leetpeek OS</title>
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
   <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
   <style>
     html,body{margin:0;padding:0}
-    .wrap{padding:16px;max-width:1400px;margin:0 auto}
-    .mermaid{min-height:60vh}
+    .controls{padding:8px}
+    .mermaid{min-height:60vh;padding:16px}
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="mermaid">
-flowchart LR
-  %% ---------- Leetpeek OS – Exec L0 (story) ----------
-
-  LP-L0-Problem[Problem]
-  LP-L0-Malgrupper[Målgrupper]
-  LP-L0-Principer[Principer]
-  LP-L0-LeetpeekKit[Leetpeek-kit]
-  LP-L0-MVPCore[MVP Core]
-  LP-L0-PilotGoLive[Pilot→Go-Live]
-  LP-L0-In[In-portar]
-  LP-L0-Ut[Ut-portar]
-  LP-L0-Varde[90-dagars värde]
-  
-  %% Spine
-  LP-L0-OSLGDPR[OSL/GDPR]
-  
-  %% Toggle
-  LP-L0-DevToggle[Dev-vy]
-
-  %% Main narrative flow (left→right)
-  LP-L0-Problem --> LP-L0-Malgrupper --> LP-L0-LeetpeekKit --> LP-L0-PilotGoLive --> LP-L0-Varde
-
-  %% Parallel ports flow
-  LP-L0-In --> LP-L0-MVPCore --> LP-L0-Ut --> LP-L0-Varde
-
-  %% Bridge connection
-  LP-L0-LeetpeekKit -.-> LP-L0-MVPCore
-
-  %% Spine connections (dashed, muted)
-  LP-L0-OSLGDPR -. påverkar .- LP-L0-Principer
-  LP-L0-OSLGDPR -. påverkar .- LP-L0-MVPCore
-
-  %% Click links to L1
-  click LP-L0-Problem "l1/problem.html" _self
-  click LP-L0-Malgrupper "l1/malgrupper.html" _self
-  click LP-L0-Principer "l1/principer.html" _self
-  click LP-L0-LeetpeekKit "l1/kapabiliteter.html" _self
-  click LP-L0-MVPCore "l1/plattform.html" _self
-  click LP-L0-PilotGoLive "l1/kundresa.html" _self
-  click LP-L0-In "l1/inportar.html" _self
-  click LP-L0-Ut "l1/utportar.html" _self
-  click LP-L0-Varde "l1/varde.html" _self
-  click LP-L0-OSLGDPR "l1/sakerhet.html" _self
-
-  %% Toggle link
-  click LP-L0-DevToggle "index_dev.html" _self
-
-  %% Färger enligt styleguide
-  classDef seg fill:#DAF0EE,stroke:#3B413C,color:#3B413C,stroke-width:2px;
-  classDef fund fill:#94D1BE,stroke:#3B413C,color:#0b0b0b,stroke-width:2px;
-  classDef cap fill:#66969B,stroke:#3B413C,color:#ffffff,stroke-width:2px;
-  classDef core fill:#DAF0EE,stroke:#3B413C,color:#0b0b0b,stroke-width:2px;
-  classDef gov fill:#3B413C,stroke:#3B413C,color:#ffffff,stroke-width:2px;
-  classDef io fill:#DAF0EE,stroke:#3B413C,color:#0b0b0b,stroke-width:2px;
-  classDef val fill:#94D1BE,stroke:#3B413C,color:#0b0b0b,stroke-width:2px;
-  classDef muted fill:#f4f6f7,stroke:#b0b6b8,color:#6b7377,stroke-width:1px;
-
-  class LP-L0-Problem seg
-  class LP-L0-Malgrupper seg
-  class LP-L0-Principer fund
-  class LP-L0-LeetpeekKit cap
-  class LP-L0-MVPCore core
-  class LP-L0-PilotGoLive seg
-  class LP-L0-In io
-  class LP-L0-Ut io
-  class LP-L0-Varde val
-  class LP-L0-OSLGDPR gov
-  class LP-L0-DevToggle muted
-    </div>
+  <div class="controls">
+    <button id="home-btn">Home</button>
+    <button id="back-btn">Back</button>
   </div>
-  <script>mermaid.initialize({startOnLoad:true});</script>
+  <div class="mermaid"></div>
+  <script type="module" src="./app.js"></script>
 </body>
 </html>
