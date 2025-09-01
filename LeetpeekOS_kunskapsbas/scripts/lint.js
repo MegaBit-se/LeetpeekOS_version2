@@ -8,9 +8,6 @@ function lint(maps, baseDir) {
     if (!map.nodes) continue;
     const ids = new Set();
     report.nodeCount += map.nodes.length;
-    if (map.nodes.length > 9) {
-      report.errors.push(`${name}: too many nodes (${map.nodes.length})`);
-    }
     for (const node of map.nodes) {
       if (!/^[a-z0-9-]+$/.test(node.id)) {
         report.errors.push(`${name}: invalid id ${node.id}`);
@@ -21,13 +18,40 @@ function lint(maps, baseDir) {
       if (!allowedStatus.includes(node.status)) {
         report.errors.push(`${name}: invalid status ${node.status} on ${node.id}`);
       }
-      if (node.link && node.link.endsWith('.md')) {
-        const target = path.join(baseDir, node.link);
-        if (!fs.existsSync(target)) {
-          report.errors.push(`${name}: missing link target ${node.link}`);
+      if (node.link) {
+        if (node.link.endsWith('.md')) {
+          const target = path.join(baseDir, node.link);
+          if (!fs.existsSync(target)) {
+            report.errors.push(`${name}: missing link target ${node.link}`);
+          }
+        } else if (node.link.startsWith('#/')) {
+          const route = node.link.slice(1);
+          if (!maps[route]) {
+            report.errors.push(`${name}: missing route ${node.link}`);
+          }
+        }
+      }
+      if (node.image) {
+        const imgPath = path.join(baseDir, node.image);
+        if (!fs.existsSync(imgPath)) {
+          report.errors.push(`${name}: missing image ${node.image}`);
         }
       }
       ids.add(node.id);
+    }
+    const allIds = new Set(ids);
+    if (map.subgraphs) {
+      for (const sg of map.subgraphs) {
+        for (const nid of sg.nodes) {
+          if (!ids.has(nid)) {
+            report.errors.push(`${name}: subgraph references unknown node ${nid}`);
+          }
+          allIds.add(nid);
+        }
+      }
+    }
+    if (allIds.size > 9) {
+      report.errors.push(`${name}: too many nodes (${allIds.size})`);
     }
     const connected = new Set();
     if (map.connections) {
@@ -45,7 +69,7 @@ function lint(maps, baseDir) {
         }
       }
     }
-    if (map.nodes.length > 1) {
+    if (allIds.size > 1) {
       for (const id of ids) {
         if (!connected.has(id)) {
           report.errors.push(`${name}: node ${id} is isolated`);

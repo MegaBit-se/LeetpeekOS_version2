@@ -24,7 +24,7 @@ export const maps = {
         "id": "mvp",
         "text": "Leetpeek MVP",
         "status": "progress",
-        "link": "#/os/mvp",
+        "link": "#/os/mvp/index",
         "tags": [
           "mvp",
           "#teams"
@@ -34,25 +34,25 @@ export const maps = {
         "id": "arkiv",
         "text": "Arkiv",
         "status": "planned",
-        "link": "#/os/arkiv"
+        "link": "#/os/arkiv/index"
       },
       {
         "id": "site",
         "text": "Site",
         "status": "planned",
-        "link": "#/os/site"
+        "link": "#/os/site/index"
       },
       {
         "id": "roadmap",
         "text": "Roadmap",
         "status": "planned",
-        "link": "#/os/roadmap"
+        "link": "#"
       },
       {
         "id": "finansiering",
-        "text": "Finansiering",
+        "text": "Finansiering🔗",
         "status": "progress",
-        "link": "#/os/strategy/finansiering",
+        "link": "/os/strategy/finansiering.md",
         "tags": [
           "blocked-deadline"
         ]
@@ -237,9 +237,10 @@ export const maps = {
       },
       {
         "id": "skanning",
-        "text": "Skanning",
+        "text": "Skanning📷",
         "status": "planned",
-        "link": "os/arkiv/pitea-pilot.md#skanning"
+        "link": "os/arkiv/pitea-pilot.md#skanning",
+        "image": "/assets/treventus-scanner.jpg"
       },
       {
         "id": "driftstart",
@@ -261,16 +262,18 @@ export const maps = {
       },
       {
         "id": "finans",
-        "text": "Finansiering",
+        "text": "Finansiering🔗",
         "status": "progress",
-        "link": "#/os/strategy/finansiering",
+        "link": "/os/strategy/finansiering.md",
         "tags": [
           "blocked-deadline",
           "vinnova-20250910",
-          "tillvaxt-20250916",
-          "echoes-20250916",
+          "tillvaxt-20250217",
+          "echoes-20250923",
           "raa-20250131"
-        ]
+        ],
+        "deadline_at": "2025-09-10",
+        "urgency_threshold_days": 10
       }
     ],
     "connections": [
@@ -326,7 +329,7 @@ export const maps = {
     "nodes": [
       {
         "id": "ansible",
-        "text": "Ansible/CI 🎥",
+        "text": "Ansible/CI🎥🔗",
         "status": "progress",
         "link": "/os/mvp/index.md",
         "tags": [
@@ -441,7 +444,7 @@ export const maps = {
       },
       {
         "id": "juridik",
-        "text": "Juridik",
+        "text": "Juridik🔗",
         "status": "progress",
         "link": "/os/arkiv/index.md"
       },
@@ -505,7 +508,7 @@ export const maps = {
     "nodes": [
       {
         "id": "hero",
-        "text": "Hero 🎥",
+        "text": "Hero🎥🔗",
         "status": "progress",
         "link": "/os/site/index.md",
         "video": "/videos/karnan.mp4"
@@ -567,6 +570,358 @@ export const maps = {
       [
         "why",
         "cta"
+      ]
+    ]
+  },
+  "/l1/positionering": {
+    "title": "L1: Positionering",
+    "layout": "cluster",
+    "subgraphs": [
+      {
+        "name": "Kärnvärde",
+        "nodes": [
+          "datasuveranitet",
+          "lokal-drift"
+        ]
+      },
+      {
+        "name": "Marknad",
+        "nodes": [
+          "norrland-gron"
+        ]
+      },
+      {
+        "name": "SWOT",
+        "nodes": [
+          "styrkor",
+          "svagheter",
+          "mojligheter",
+          "hot"
+        ]
+      }
+    ],
+    "nodes": [
+      {
+        "id": "datasuveranitet",
+        "text": "Datasuveränitet📷🔗",
+        "status": "done",
+        "link": "/os/strategy/positionering.md",
+        "tags": [
+          "karnvarde",
+          "blocked-deadline"
+        ],
+        "deadline_at": "2025-09-10",
+        "urgency_threshold_days": 10,
+        "image": "/assets/flodesschema-pitea.png"
+      },
+      {
+        "id": "lokal-drift",
+        "text": "Lokal Drift🎥🔗",
+        "status": "planned",
+        "link": "/os/strategy/positionering.md",
+        "video": "/videos/positionering.mp4"
+      },
+      {
+        "id": "norrland-gron",
+        "text": "Norrland Grön🔗",
+        "status": "planned",
+        "link": "/os/strategy/positionering.md"
+      },
+      {
+        "id": "styrkor",
+        "text": "Styrkor🔗",
+        "status": "planned",
+        "link": "/os/strategy/positionering.md"
+      },
+      {
+        "id": "svagheter",
+        "text": "Svagheter🔗",
+        "status": "planned",
+        "link": "/os/strategy/positionering.md"
+      },
+      {
+        "id": "mojligheter",
+        "text": "Möjligheter🔗",
+        "status": "planned",
+        "link": "/os/strategy/positionering.md"
+      },
+      {
+        "id": "hot",
+        "text": "Hot🔗",
+        "status": "planned",
+        "link": "/os/strategy/positionering.md"
+      }
+    ],
+    "connections": [
+      [
+        "datasuveranitet",
+        "lokal-drift"
+      ],
+      [
+        "lokal-drift",
+        "norrland-gron"
+      ],
+      [
+        "norrland-gron",
+        "styrkor"
+      ],
+      [
+        "styrkor",
+        "svagheter"
+      ],
+      [
+        "svagheter",
+        "mojligheter"
+      ],
+      [
+        "mojligheter",
+        "hot"
+      ]
+    ]
+  },
+  "/os/strategy/erbjudanden": {
+    "title": "L2: Erbjudanden",
+    "layout": "cluster",
+    "subgraphs": [
+      {
+        "name": "Tier 1-3",
+        "nodes": [
+          "tier1",
+          "tier2",
+          "tier3"
+        ]
+      },
+      {
+        "name": "Tjänster",
+        "nodes": [
+          "konsultation",
+          "utbildning",
+          "raas"
+        ]
+      }
+    ],
+    "nodes": [
+      {
+        "id": "tier1",
+        "text": "Personlig AI🔗",
+        "status": "planned",
+        "link": "/os/strategy/erbjudanden.md"
+      },
+      {
+        "id": "tier2",
+        "text": "Företags-AI🔗",
+        "status": "planned",
+        "link": "/os/strategy/erbjudanden.md"
+      },
+      {
+        "id": "tier3",
+        "text": "Enterprise-AI🔗",
+        "status": "planned",
+        "link": "/os/strategy/erbjudanden.md"
+      },
+      {
+        "id": "konsultation",
+        "text": "Konsultation🔗",
+        "status": "planned",
+        "link": "/os/strategy/erbjudanden.md"
+      },
+      {
+        "id": "utbildning",
+        "text": "Utbildning🔗",
+        "status": "planned",
+        "link": "/os/strategy/erbjudanden.md"
+      },
+      {
+        "id": "raas",
+        "text": "RaaS🔗",
+        "status": "planned",
+        "link": "/os/strategy/erbjudanden.md"
+      }
+    ],
+    "connections": [
+      [
+        "tier1",
+        "tier2"
+      ],
+      [
+        "tier2",
+        "tier3"
+      ],
+      [
+        "tier3",
+        "konsultation"
+      ],
+      [
+        "konsultation",
+        "utbildning"
+      ],
+      [
+        "utbildning",
+        "raas"
+      ]
+    ]
+  },
+  "/os/strategy/varumarke": {
+    "title": "L2: Varumärke",
+    "layout": "cluster",
+    "subgraphs": [
+      {
+        "name": "Narrativ-Ankare",
+        "nodes": [
+          "varfor-har",
+          "vad-vi-bygger",
+          "for-vem",
+          "hur-vi-gor",
+          "effekten"
+        ]
+      },
+      {
+        "name": "Tone",
+        "nodes": [
+          "lugn",
+          "varm"
+        ]
+      }
+    ],
+    "nodes": [
+      {
+        "id": "varfor-har",
+        "text": "Varför Här🔗",
+        "status": "planned",
+        "link": "/os/strategy/varumarke.md"
+      },
+      {
+        "id": "vad-vi-bygger",
+        "text": "Vad Vi Bygger🔗",
+        "status": "planned",
+        "link": "/os/strategy/varumarke.md"
+      },
+      {
+        "id": "for-vem",
+        "text": "För Vem🔗",
+        "status": "planned",
+        "link": "/os/strategy/varumarke.md"
+      },
+      {
+        "id": "hur-vi-gor",
+        "text": "Hur Vi Gör🔗",
+        "status": "planned",
+        "link": "/os/strategy/varumarke.md"
+      },
+      {
+        "id": "effekten",
+        "text": "Effekten🔗",
+        "status": "planned",
+        "link": "/os/strategy/varumarke.md"
+      },
+      {
+        "id": "lugn",
+        "text": "Lugn🔗",
+        "status": "planned",
+        "link": "/os/strategy/varumarke.md"
+      },
+      {
+        "id": "varm",
+        "text": "Varm🔗",
+        "status": "planned",
+        "link": "/os/strategy/varumarke.md"
+      }
+    ],
+    "connections": [
+      [
+        "varfor-har",
+        "vad-vi-bygger"
+      ],
+      [
+        "vad-vi-bygger",
+        "for-vem"
+      ],
+      [
+        "for-vem",
+        "hur-vi-gor"
+      ],
+      [
+        "hur-vi-gor",
+        "effekten"
+      ],
+      [
+        "effekten",
+        "lugn"
+      ],
+      [
+        "lugn",
+        "varm"
+      ]
+    ]
+  },
+  "/os/strategy/rekommendationer": {
+    "title": "L2: Rekommendationer",
+    "layout": "cluster",
+    "subgraphs": [
+      {
+        "name": "Kortsiktig",
+        "nodes": [
+          "marknadsforing",
+          "ai-sweden"
+        ]
+      },
+      {
+        "name": "Långsiktig",
+        "nodes": [
+          "universitetsprogram",
+          "expansion-skog",
+          "expansion-energi"
+        ]
+      }
+    ],
+    "nodes": [
+      {
+        "id": "marknadsforing",
+        "text": "Marknadsföring🔗",
+        "status": "planned",
+        "link": "/os/strategy/rekommendationer.md"
+      },
+      {
+        "id": "ai-sweden",
+        "text": "AI Sweden North🔗",
+        "status": "planned",
+        "link": "/os/strategy/rekommendationer.md"
+      },
+      {
+        "id": "universitetsprogram",
+        "text": "Universitetsprogram🔗",
+        "status": "planned",
+        "link": "/os/strategy/rekommendationer.md"
+      },
+      {
+        "id": "expansion-skog",
+        "text": "Expansion Skog🔗",
+        "status": "planned",
+        "link": "/os/strategy/rekommendationer.md"
+      },
+      {
+        "id": "expansion-energi",
+        "text": "Expansion Energi🔗",
+        "status": "planned",
+        "link": "/os/strategy/rekommendationer.md"
+      }
+    ],
+    "connections": [
+      [
+        "marknadsforing",
+        "ai-sweden"
+      ],
+      [
+        "ai-sweden",
+        "universitetsprogram"
+      ],
+      [
+        "universitetsprogram",
+        "expansion-skog"
+      ],
+      [
+        "expansion-skog",
+        "expansion-energi"
       ]
     ]
   }

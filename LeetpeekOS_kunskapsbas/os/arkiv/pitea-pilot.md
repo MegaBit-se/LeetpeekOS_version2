@@ -9,6 +9,8 @@
 4. Utvärdering
 5. Skalplan
 
+![Flödesschema](/assets/flodesschema-pitea.png)
+
 ```mermaid
 flowchart LR
   start --> forstudie --> skanning --> driftstart --> utvardering --> skalplan
