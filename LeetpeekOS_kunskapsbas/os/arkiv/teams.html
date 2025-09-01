@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leetpeek OS - Teams Go-Live</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <style>
+    html,body{margin:0;padding:0}
+    .wrap{padding:16px;max-width:1400px;margin:0 auto}
+    .mermaid{min-height:60vh}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="mermaid">
+flowchart LR
+  LP-TEA-Home[Home]
+  LP-TEA-Back[⬅︎ Back]
+  
+  LP-TEA-App[App reg]
+  LP-TEA-Bot[Bot/iframe]
+  LP-TEA-Auth[Auth/scopes]
+  LP-TEA-Msg[Msg flow]
+  LP-TEA-Citations[Citations]
+  LP-TEA-Install[Tenant install]
+  LP-TEA-UAT[UAT/Smoke]
+
+  LP-TEA-Home --> LP-TEA-Back
+  LP-TEA-App --> LP-TEA-Bot --> LP-TEA-Auth --> LP-TEA-Msg --> LP-TEA-Citations --> LP-TEA-Install --> LP-TEA-UAT
+
+  click LP-TEA-Home "../../index.html" _self
+  click LP-TEA-Back "index.html" _self
+
+  classDef done fill:#94D1BE,stroke:#3B413C,stroke-width:2px;
+  classDef progress fill:#FFEDB5,stroke:#C97E00,stroke-width:2px;
+  classDef planned fill:#ECEFF1,stroke:#90A4AE,stroke-width:2px;
+  classDef blocked fill:#FDE0E0,stroke:#D32F2F,stroke-width:2px;
+  classDef muted fill:#f4f6f7,stroke:#b0b6b8,color:#6b7377,stroke-width:1px;
+
+  class LP-TEA-Home,LP-TEA-Back muted
+  class LP-TEA-App,LP-TEA-Bot,LP-TEA-Auth,LP-TEA-Msg,LP-TEA-Citations,LP-TEA-Install,LP-TEA-UAT planned
+    </div>
+  </div>
+  <script>mermaid.initialize({startOnLoad:true});</script>
+</body>
+</html>

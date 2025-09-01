@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leetpeek OS - AI Kommunarkiv</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <style>
+    html,body{margin:0;padding:0}
+    .wrap{padding:16px;max-width:1400px;margin:0 auto}
+    .mermaid{min-height:60vh}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="mermaid">
+flowchart LR
+  LP-ARK-Home[Home]
+  LP-ARK-Back[⬅︎ Back]
+  
+  LP-ARK-Stakeholders[Stakeholders]
+  LP-ARK-OSL[OSL/Klassning]
+  LP-ARK-DPIA[DPIA/PUB]
+  LP-ARK-Ingest[Ingest/OCR]
+  LP-ARK-Index[Index/RAG]
+  LP-ARK-Teams[Teams Go-Live]
+  LP-ARK-Export[Export/Radering]
+
+  LP-ARK-Home --> LP-ARK-Back
+  LP-ARK-Stakeholders --> LP-ARK-OSL --> LP-ARK-DPIA --> LP-ARK-Ingest --> LP-ARK-Index --> LP-ARK-Teams --> LP-ARK-Export
+
+  click LP-ARK-Home "../../index.html" _self
+  click LP-ARK-Back "../../l1/kapabiliteter.html" _self
+  click LP-ARK-OSL "juridik.html" _self
+  click LP-ARK-DPIA "juridik.html" _self
+  click LP-ARK-Ingest "ingest-ocr.html" _self
+  click LP-ARK-Index "index-rag.html" _self
+  click LP-ARK-Teams "teams.html" _self
+  click LP-ARK-Export "lifecycle.html" _self
+
+  classDef done fill:#94D1BE,stroke:#3B413C,stroke-width:2px;
+  classDef progress fill:#FFEDB5,stroke:#C97E00,stroke-width:2px;
+  classDef planned fill:#ECEFF1,stroke:#90A4AE,stroke-width:2px;
+  classDef blocked fill:#FDE0E0,stroke:#D32F2F,stroke-width:2px;
+  classDef muted fill:#f4f6f7,stroke:#b0b6b8,color:#6b7377,stroke-width:1px;
+
+  class LP-ARK-Home,LP-ARK-Back muted
+  class LP-ARK-Stakeholders progress
+  class LP-ARK-OSL,LP-ARK-DPIA,LP-ARK-Ingest,LP-ARK-Teams,LP-ARK-Export planned
+  class LP-ARK-Index progress
+    </div>
+  </div>
+  <script>mermaid.initialize({startOnLoad:true});</script>
+</body>
+</html>

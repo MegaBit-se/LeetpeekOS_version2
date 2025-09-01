@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leetpeek OS - Offentlig</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <style>
+    html,body{margin:0;padding:0}
+    .wrap{padding:16px;max-width:1400px;margin:0 auto}
+    .mermaid{min-height:60vh}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="mermaid">
+flowchart LR
+  LP-OFF-Home[Home]
+  LP-OFF-Back[⬅︎ Back]
+  
+  LP-OFF-OSL[OSL-klass]
+  LP-OFF-PUB[PUB-avtal]
+  LP-OFF-DPIA[DPIA]
+  LP-OFF-Procurement[Upphandling]
+  LP-OFF-Pilot[Pilot-90]
+  LP-OFF-Teams[Teams-nav]
+  LP-OFF-Export[Export/Radering]
+
+  LP-OFF-Home --> LP-OFF-Back
+  LP-OFF-OSL --> LP-OFF-PUB --> LP-OFF-DPIA --> LP-OFF-Procurement --> LP-OFF-Pilot --> LP-OFF-Teams --> LP-OFF-Export
+
+  click LP-OFF-Home "../index.html" _self
+  click LP-OFF-Back "../index.html" _self
+  click LP-OFF-DPIA "sakerhet.html" _self
+  click LP-OFF-Procurement "../l2/pre-upphandling.html" _self
+  click LP-OFF-Pilot "../l2/poc_kommun.html" _self
+  click LP-OFF-Teams "../l2/teams_golive.html" _self
+  click LP-OFF-Export "sakerhet.html" _self
+
+  classDef done fill:#94D1BE,stroke:#3B413C,stroke-width:2px;
+  classDef progress fill:#FFEDB5,stroke:#C97E00,stroke-width:2px;
+  classDef planned fill:#ECEFF1,stroke:#90A4AE,stroke-width:2px;
+  classDef blocked fill:#FDE0E0,stroke:#D32F2F,stroke-width:2px;
+  classDef muted fill:#f4f6f7,stroke:#b0b6b8,color:#6b7377,stroke-width:1px;
+
+  class LP-OFF-Home,LP-OFF-Back muted
+  class LP-OFF-OSL,LP-OFF-PUB,LP-OFF-DPIA,LP-OFF-Procurement,LP-OFF-Pilot,LP-OFF-Teams,LP-OFF-Export planned
+    </div>
+  </div>
+  <script>mermaid.initialize({startOnLoad:true});</script>
+</body>
+</html>

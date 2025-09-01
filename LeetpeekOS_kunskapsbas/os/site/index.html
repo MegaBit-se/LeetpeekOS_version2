@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leetpeek OS - Website</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <style>
+    html,body{margin:0;padding:0}
+    .wrap{padding:16px;max-width:1400px;margin:0 auto}
+    .mermaid{min-height:60vh}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="mermaid">
+flowchart LR
+  LP-SITE-Home[Home]
+  LP-SITE-Back[⬅︎ Back]
+  
+  LP-SITE-Hero[Hero/CTA]
+  LP-SITE-Segment[Segment]
+  LP-SITE-Tech[Vår teknik]
+  LP-SITE-Why[Why-us]
+  LP-SITE-About[Om oss]
+  LP-SITE-FAQ[FAQ]
+  LP-SITE-Contact[Kontakt]
+
+  LP-SITE-Home --> LP-SITE-Back
+  LP-SITE-Hero --> LP-SITE-Segment --> LP-SITE-Tech --> LP-SITE-Why --> LP-SITE-About --> LP-SITE-FAQ --> LP-SITE-Contact
+
+  click LP-SITE-Home "../../index.html" _self
+  click LP-SITE-Back "../../l1/affarsnav.html" _self
+  click LP-SITE-Hero "build-lead.html" _self
+  click LP-SITE-Tech "content-plan.html" _self
+  click LP-SITE-Why "analytics.html" _self
+  click LP-SITE-About "content-plan.html" _self
+  click LP-SITE-FAQ "content-plan.html" _self
+  click LP-SITE-Contact "lead-funnel.html" _self
+
+  classDef done fill:#94D1BE,stroke:#3B413C,stroke-width:2px;
+  classDef progress fill:#FFEDB5,stroke:#C97E00,stroke-width:2px;
+  classDef planned fill:#ECEFF1,stroke:#90A4AE,stroke-width:2px;
+  classDef blocked fill:#FDE0E0,stroke:#D32F2F,stroke-width:2px;
+  classDef muted fill:#f4f6f7,stroke:#b0b6b8,color:#6b7377,stroke-width:1px;
+
+  class LP-SITE-Home,LP-SITE-Back muted
+  class LP-SITE-Hero,LP-SITE-Segment,LP-SITE-Contact done
+  class LP-SITE-Tech,LP-SITE-Why,LP-SITE-About,LP-SITE-FAQ progress
+    </div>
+  </div>
+  <script>mermaid.initialize({startOnLoad:true});</script>
+</body>
+</html>

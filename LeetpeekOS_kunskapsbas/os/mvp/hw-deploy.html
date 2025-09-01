@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leetpeek OS - Hårdvara Deploy</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <style>
+    html,body{margin:0;padding:0}
+    .wrap{padding:16px;max-width:1400px;margin:0 auto}
+    .mermaid{min-height:60vh}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="mermaid">
+flowchart LR
+  LP-HW-Home[Home]
+  LP-HW-Back[⬅︎ Back]
+  
+  LP-HW-PC[Custom PC]
+  LP-HW-GPU[GPU/Drivers]
+  LP-HW-Docker[Docker]
+  LP-HW-Compose[Compose]
+  LP-HW-Traefik[Traefik]
+  LP-HW-DNS[DNS/TLS]
+  LP-HW-Health[Health/Bench]
+
+  LP-HW-Home --> LP-HW-Back
+  LP-HW-PC --> LP-HW-GPU --> LP-HW-Docker --> LP-HW-Compose --> LP-HW-Traefik --> LP-HW-DNS --> LP-HW-Health
+
+  click LP-HW-Home "../../index.html" _self
+  click LP-HW-Back "index.html" _self
+
+  classDef done fill:#94D1BE,stroke:#3B413C,stroke-width:2px;
+  classDef progress fill:#FFEDB5,stroke:#C97E00,stroke-width:2px;
+  classDef planned fill:#ECEFF1,stroke:#90A4AE,stroke-width:2px;
+  classDef blocked fill:#FDE0E0,stroke:#D32F2F,stroke-width:2px;
+  classDef muted fill:#f4f6f7,stroke:#b0b6b8,color:#6b7377,stroke-width:1px;
+
+  class LP-HW-Home,LP-HW-Back muted
+  class LP-HW-PC,LP-HW-GPU,LP-HW-Docker,LP-HW-Compose,LP-HW-Traefik,LP-HW-DNS,LP-HW-Health progress
+    </div>
+  </div>
+  <script>mermaid.initialize({startOnLoad:true});</script>
+</body>
+</html>

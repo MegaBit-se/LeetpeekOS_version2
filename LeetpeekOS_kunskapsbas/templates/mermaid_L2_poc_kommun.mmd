@@ -1,0 +1,11 @@
+flowchart LR
+  LP-L2-Home[Home] --> LP-L2-Back[⬅︎ Tillbaka]
+  LP-L2-Back --> LP-L2-POC[PoC kommun]
+
+  LP-L2-POC --> F1[Förberedelse]
+  F1 --> F2[Installation]
+  F2 --> F3[Test]
+  F3 --> F4[Utvärdering]
+
+  click LP-L2-Home "/index.html" _self
+  %% click LP-L2-Back "/l1/kundresa.html" _self

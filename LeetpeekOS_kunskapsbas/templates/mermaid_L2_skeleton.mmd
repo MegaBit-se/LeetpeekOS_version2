@@ -1,0 +1,15 @@
+flowchart LR
+  LP-L2-Home[Home] --> LP-L2-Back[⬅︎ Tillbaka]
+  LP-L2-Back --> LP-L2-Title[Titel]
+
+  %% 7–9 steg
+  LP-L2-Title --> S1[Steg 1]
+  S1 --> S2[Steg 2]
+  S2 --> S3[Steg 3]
+  S3 --> S4[Steg 4]
+  S4 --> S5[Steg 5]
+
+  click LP-L2-Home "/index.html" _self
+  %% click LP-L2-Back "/l1/kapabiliteter.html" _self
+
+  classDef seg fill:#DAF0EE,stroke:#3B413C,color:#3B413C;

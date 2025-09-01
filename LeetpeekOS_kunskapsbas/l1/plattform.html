@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leetpeek OS - Plattform</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <style>
+    html,body{margin:0;padding:0}
+    .wrap{padding:16px;max-width:1400px;margin:0 auto}
+    .mermaid{min-height:60vh}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="mermaid">
+flowchart LR
+  LP-L1-Home[Home]
+  LP-L1-Back[⬅︎ Tillbaka]
+
+  LP-L1-Ingress[Ingress]
+  LP-L1-Identitet[Identitet]
+  LP-L1-Gateway[Gateway]
+  LP-L1-Inferens[Inferens]
+  LP-L1-Data[Data]
+  LP-L1-Automation[Automation]
+  LP-L1-Observability[Observability]
+
+  LP-L1-Home --> LP-L1-Back
+  LP-L1-Ingress --> LP-L1-Identitet --> LP-L1-Gateway --> LP-L1-Inferens --> LP-L1-Data --> LP-L1-Automation --> LP-L1-Observability
+
+  click LP-L1-Home "../index.html" _self
+  click LP-L1-Back "../index.html" _self
+  click LP-L1-Gateway "../os/mvp/index.html" _self
+
+  classDef muted fill:#f4f6f7,stroke:#b0b6b8,color:#6b7377,stroke-width:1px;
+  classDef core fill:#DAF0EE,stroke:#3B413C,color:#0b0b0b,stroke-width:2px;
+  classDef fund fill:#94D1BE,stroke:#3B413C,color:#0b0b0b,stroke-width:2px;
+  classDef cap fill:#66969B,stroke:#3B413C,color:#ffffff,stroke-width:2px;
+
+  class LP-L1-Home,LP-L1-Back muted
+  class LP-L1-Ingress,LP-L1-Identitet,LP-L1-Gateway,LP-L1-Data,LP-L1-Automation,LP-L1-Observability core
+  class LP-L1-Inferens cap
+    </div>
+  </div>
+  <script>mermaid.initialize({startOnLoad:true});</script>
+</body>
+</html>

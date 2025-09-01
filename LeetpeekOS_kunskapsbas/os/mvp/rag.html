@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leetpeek OS - RAG/Index</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <style>
+    html,body{margin:0;padding:0}
+    .wrap{padding:16px;max-width:1400px;margin:0 auto}
+    .mermaid{min-height:60vh}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="mermaid">
+flowchart LR
+  LP-RAG-Home[Home]
+  LP-RAG-Back[⬅︎ Back]
+  
+  LP-RAG-Docs[Docs ingest]
+  LP-RAG-OCR[OCR/Cleanup]
+  LP-RAG-Chunk[Chunking]
+  LP-RAG-Embed[Embedding]
+  LP-RAG-Qdrant[Qdrant upsert]
+  LP-RAG-Retrieval[Retrieval]
+  LP-RAG-Citations[Citations]
+
+  LP-RAG-Home --> LP-RAG-Back
+  LP-RAG-Docs --> LP-RAG-OCR --> LP-RAG-Chunk --> LP-RAG-Embed --> LP-RAG-Qdrant --> LP-RAG-Retrieval --> LP-RAG-Citations
+  LP-RAG-Citations -.-> LP-RAG-Chunk
+
+  click LP-RAG-Home "../../index.html" _self
+  click LP-RAG-Back "index.html" _self
+
+  classDef done fill:#94D1BE,stroke:#3B413C,stroke-width:2px;
+  classDef progress fill:#FFEDB5,stroke:#C97E00,stroke-width:2px;
+  classDef planned fill:#ECEFF1,stroke:#90A4AE,stroke-width:2px;
+  classDef blocked fill:#FDE0E0,stroke:#D32F2F,stroke-width:2px;
+  classDef muted fill:#f4f6f7,stroke:#b0b6b8,color:#6b7377,stroke-width:1px;
+
+  class LP-RAG-Home,LP-RAG-Back muted
+  class LP-RAG-Docs,LP-RAG-OCR,LP-RAG-Chunk,LP-RAG-Embed,LP-RAG-Qdrant,LP-RAG-Retrieval,LP-RAG-Citations planned
+    </div>
+  </div>
+  <script>mermaid.initialize({startOnLoad:true});</script>
+</body>
+</html>

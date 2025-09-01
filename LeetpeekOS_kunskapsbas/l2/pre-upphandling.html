@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leetpeek OS - Pre-upphandling</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <style>
+    html,body{margin:0;padding:0}
+    .wrap{padding:16px;max-width:1400px;margin:0 auto}
+    .mermaid{min-height:60vh}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="mermaid">
+flowchart LR
+  LP-PRE-Home[Home]
+  LP-PRE-Back[⬅︎ Back]
+  
+  LP-PRE-Stakeholders[Stakeholders]
+  LP-PRE-Need[Behov]
+  LP-PRE-Requirements[Kravutkast]
+  LP-PRE-DPIA[DPIA-stöd]
+  LP-PRE-Scope[Pilot-scope]
+  LP-PRE-RFI[RFI/RFP]
+  LP-PRE-Decision[Go/Stop]
+
+  LP-PRE-Home --> LP-PRE-Back
+  LP-PRE-Stakeholders --> LP-PRE-Need --> LP-PRE-Requirements --> LP-PRE-DPIA --> LP-PRE-Scope --> LP-PRE-RFI --> LP-PRE-Decision
+
+  click LP-PRE-Home "../index.html" _self
+  click LP-PRE-Back "../l1/offentlig.html" _self
+  click LP-PRE-Stakeholders "../l1/offentlig.html" _self
+  click LP-PRE-Need "../l1/kundresa.html" _self
+  click LP-PRE-Requirements "../l1/positionering.html" _self
+  click LP-PRE-DPIA "../l1/sakerhet.html" _self
+  click LP-PRE-Scope "poc_kommun.html" _self
+  click LP-PRE-RFI "../l1/affarsnav.html" _self
+  click LP-PRE-Decision "../l1/kundresa.html" _self
+
+  classDef done fill:#94D1BE,stroke:#3B413C,stroke-width:2px;
+  classDef progress fill:#FFEDB5,stroke:#C97E00,stroke-width:2px;
+  classDef planned fill:#ECEFF1,stroke:#90A4AE,stroke-width:2px;
+  classDef blocked fill:#FDE0E0,stroke:#D32F2F,stroke-width:2px;
+  classDef muted fill:#f4f6f7,stroke:#b0b6b8,color:#6b7377,stroke-width:1px;
+
+  class LP-PRE-Home,LP-PRE-Back muted
+  class LP-PRE-Stakeholders,LP-PRE-Need,LP-PRE-Requirements,LP-PRE-DPIA,LP-PRE-Scope,LP-PRE-RFI,LP-PRE-Decision planned
+    </div>
+  </div>
+  <script>mermaid.initialize({startOnLoad:true});</script>
+</body>
+</html>

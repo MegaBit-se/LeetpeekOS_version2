@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leetpeek OS - Index RAG</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <style>
+    html,body{margin:0;padding:0}
+    .wrap{padding:16px;max-width:1400px;margin:0 auto}
+    .mermaid{min-height:60vh}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="mermaid">
+flowchart LR
+  LP-IDX-Home[Home]
+  LP-IDX-Back[⬅︎ Back]
+  
+  LP-IDX-Chunk[Chunking]
+  LP-IDX-Embed[Embedding]
+  LP-IDX-Qdrant[Qdrant upsert]
+  LP-IDX-Retrieval[Retrieval]
+  LP-IDX-Citations[Citeringar]
+  LP-IDX-Eval[Eval set]
+  LP-IDX-Smoke[Smoke tests]
+
+  LP-IDX-Home --> LP-IDX-Back
+  LP-IDX-Chunk --> LP-IDX-Embed --> LP-IDX-Qdrant --> LP-IDX-Retrieval --> LP-IDX-Citations --> LP-IDX-Eval --> LP-IDX-Smoke
+  LP-IDX-Citations -.-> LP-IDX-Chunk
+
+  click LP-IDX-Home "../../index.html" _self
+  click LP-IDX-Back "index.html" _self
+
+  classDef done fill:#94D1BE,stroke:#3B413C,stroke-width:2px;
+  classDef progress fill:#FFEDB5,stroke:#C97E00,stroke-width:2px;
+  classDef planned fill:#ECEFF1,stroke:#90A4AE,stroke-width:2px;
+  classDef blocked fill:#FDE0E0,stroke:#D32F2F,stroke-width:2px;
+  classDef muted fill:#f4f6f7,stroke:#b0b6b8,color:#6b7377,stroke-width:1px;
+
+  class LP-IDX-Home,LP-IDX-Back muted
+  class LP-IDX-Chunk,LP-IDX-Embed,LP-IDX-Qdrant,LP-IDX-Retrieval,LP-IDX-Citations,LP-IDX-Eval,LP-IDX-Smoke progress
+    </div>
+  </div>
+  <script>mermaid.initialize({startOnLoad:true});</script>
+</body>
+</html>

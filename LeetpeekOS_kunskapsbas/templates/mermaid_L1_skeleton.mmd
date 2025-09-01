@@ -1,0 +1,28 @@
+flowchart TB
+  %% ---------- L1 skeleton ----------
+  LP-L1-Home[Home] --> LP-L1-Back[⬅︎ Tillbaka]
+  LP-L1-Back --> LP-L1-Title[Titel]
+
+  %% Placera 7–9 noder under Titeln
+  LP-L1-Title --> N1[A]
+  LP-L1-Title --> N2[B]
+  LP-L1-Title --> N3[C]
+  LP-L1-Title --> N4[D]
+  LP-L1-Title --> N5[E]
+  LP-L1-Title --> N6[F]
+  LP-L1-Title --> N7[G]
+
+  %% Clicks (exempel – uppdatera i varje sida)
+  click LP-L1-Home "/index.html" _self
+  %% click LP-L1-Back "../index.html" _self
+  %% click N1 "../l2/some_playbook.html" _self
+
+  %% Färger enligt brand
+  classDef seg fill:#DAF0EE,stroke:#3B413C,color:#3B413C;
+  classDef fund fill:#94D1BE,stroke:#3B413C,color:#0b0b0b;
+  classDef cap  fill:#66969B,stroke:#3B413C,color:#ffffff;
+  classDef core fill:#DAF0EE,stroke:#3B413C,color:#0b0b0b;
+  classDef gov  fill:#3B413C,stroke:#3B413C,color:#ffffff;
+  classDef io   fill:#DAF0EE,stroke:#3B413C,color:#0b0b0b;
+  classDef out  fill:#DAF0EE,stroke:#3B413C,color:#0b0b0b;
+  classDef val  fill:#94D1BE,stroke:#3B413C,color:#0b0b0b;

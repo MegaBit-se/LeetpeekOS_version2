@@ -1,0 +1,53 @@
+flowchart LR
+  %% ---------- Leetpeek OS – L0 (9 noder) ----------
+
+  LP-L0-Problem[Problem]
+  LP-L0-Malgrupper[Målgrupper]
+  LP-L0-Principer[Principer]
+  LP-L0-Kapabiliteter[Kapabiliteter]
+  LP-L0-Plattform[Plattform]
+  LP-L0-Kundresa[Kundresa]
+  LP-L0-In[In-portar]
+  LP-L0-Ut[Ut-portar]
+  LP-L0-Varde[Värde]
+  LP-L0-Sakerhet[Säkerhet]
+
+  %% Flöde vänster->höger
+  LP-L0-Problem --> LP-L0-Malgrupper --> LP-L0-Principer --> LP-L0-Kapabiliteter --> LP-L0-Plattform --> LP-L0-Kundresa --> LP-L0-Varde
+  LP-L0-In --> LP-L0-Plattform --> LP-L0-Ut --> LP-L0-Varde
+
+  %% Säkerhet som spine (utan spagetti)
+  LP-L0-Sakerhet -. påverkar .- LP-L0-Plattform
+
+  %% Clicks till L1
+  click LP-L0-Problem "l1/problem.html" _self
+  click LP-L0-Malgrupper "l1/malgrupper.html" _self
+  click LP-L0-Principer "l1/principer.html" _self
+  click LP-L0-Kapabiliteter "l1/kapabiliteter.html" _self
+  click LP-L0-Plattform "l1/plattform.html" _self
+  click LP-L0-Kundresa "l1/kundresa.html" _self
+  click LP-L0-In "l1/inportar.html" _self
+  click LP-L0-Ut "l1/utportar.html" _self
+  click LP-L0-Varde "l1/varde.html" _self
+  click LP-L0-Sakerhet "l1/sakerhet.html" _self
+
+  %% Färger (återanvänd enligt snippet)
+  classDef seg fill:#DAF0EE,stroke:#3B413C,color:#3B413C;
+  classDef fund fill:#94D1BE,stroke:#3B413C,color:#0b0b0b;
+  classDef cap  fill:#66969B,stroke:#3B413C,color:#ffffff;
+  classDef core fill:#DAF0EE,stroke:#3B413C,color:#0b0b0b;
+  classDef gov  fill:#3B413C,stroke:#3B413C,color:#ffffff;
+  classDef io   fill:#DAF0EE,stroke:#3B413C,color:#0b0b0b;
+  classDef out  fill:#DAF0EE,stroke:#3B413C,color:#0b0b0b;
+  classDef val  fill:#94D1BE,stroke:#3B413C,color:#0b0b0b;
+
+  class LP-L0-Problem seg
+  class LP-L0-Malgrupper seg
+  class LP-L0-Principer fund
+  class LP-L0-Kapabiliteter cap
+  class LP-L0-Plattform core
+  class LP-L0-Kundresa seg
+  class LP-L0-In io
+  class LP-L0-Ut out
+  class LP-L0-Varde val
+  class LP-L0-Sakerhet gov

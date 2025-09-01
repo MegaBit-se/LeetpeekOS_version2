@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leetpeek OS - n8n</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <style>
+    html,body{margin:0;padding:0}
+    .wrap{padding:16px;max-width:1400px;margin:0 auto}
+    .mermaid{min-height:60vh}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="mermaid">
+flowchart LR
+  LP-N8N-Home[Home]
+  LP-N8N-Back[⬅︎ Back]
+  
+  LP-N8N-Up[n8n up]
+  LP-N8N-Queue[Queue/Worker]
+  LP-N8N-LLM[LLM node]
+  LP-N8N-Tools[Tool calls]
+  LP-N8N-Vault[Secrets/Vault]
+  LP-N8N-Audit[Audit logs]
+  LP-N8N-Retry[Retry policy]
+
+  LP-N8N-Home --> LP-N8N-Back
+  LP-N8N-Up --> LP-N8N-Queue --> LP-N8N-LLM --> LP-N8N-Tools --> LP-N8N-Vault --> LP-N8N-Audit --> LP-N8N-Retry
+
+  click LP-N8N-Home "../../index.html" _self
+  click LP-N8N-Back "index.html" _self
+
+  classDef done fill:#94D1BE,stroke:#3B413C,stroke-width:2px;
+  classDef progress fill:#FFEDB5,stroke:#C97E00,stroke-width:2px;
+  classDef planned fill:#ECEFF1,stroke:#90A4AE,stroke-width:2px;
+  classDef blocked fill:#FDE0E0,stroke:#D32F2F,stroke-width:2px;
+  classDef muted fill:#f4f6f7,stroke:#b0b6b8,color:#6b7377,stroke-width:1px;
+
+  class LP-N8N-Home,LP-N8N-Back muted
+  class LP-N8N-Up,LP-N8N-Queue,LP-N8N-LLM,LP-N8N-Tools,LP-N8N-Vault,LP-N8N-Audit,LP-N8N-Retry progress
+    </div>
+  </div>
+  <script>mermaid.initialize({startOnLoad:true});</script>
+</body>
+</html>

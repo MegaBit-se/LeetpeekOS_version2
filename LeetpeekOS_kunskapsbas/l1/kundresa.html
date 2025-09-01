@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leetpeek OS - Kundresa</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <style>
+    html,body{margin:0;padding:0}
+    .wrap{padding:16px;max-width:1400px;margin:0 auto}
+    .mermaid{min-height:60vh}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="mermaid">
+flowchart LR
+  LP-L1-Home[Home]
+  LP-L1-Back[⬅︎ Tillbaka]
+  LP-L1-Kundresa[Kundresa]
+  
+  %% Business rail (upper)
+  subgraph BusinessJourney[Business Journey]
+    LP-L1-Behov[Behov] --> LP-L1-Pilot90[Pilot-90] --> LP-L1-Inforande[Införande] --> LP-L1-Stod[Stöd]
+  end
+
+  %% Tech rail (lower) 
+  subgraph TechJourney[Tech Journey]
+    LP-L1-Dev[Dev] --> LP-L1-Stage[Stage] --> LP-L1-Prod[Prod] --> LP-L1-Monitor[Monitor]
+  end
+
+  LP-L1-Home --> LP-L1-Back --> LP-L1-Kundresa
+  LP-L1-Kundresa --> BusinessJourney
+  LP-L1-Kundresa --> TechJourney
+
+  %% Cross-rail connections
+  LP-L1-Behov -.-> LP-L1-Dev
+  LP-L1-Pilot90 -.-> LP-L1-Stage
+  LP-L1-Inforande -.-> LP-L1-Prod
+  LP-L1-Stod -.-> LP-L1-Monitor
+
+  click LP-L1-Home "../index.html" _self
+  click LP-L1-Back "../index.html" _self
+
+  classDef muted fill:#f4f6f7,stroke:#b0b6b8,color:#6b7377,stroke-width:1px;
+  classDef seg fill:#DAF0EE,stroke:#3B413C,color:#3B413C,stroke-width:2px;
+  classDef fund fill:#94D1BE,stroke:#3B413C,color:#0b0b0b,stroke-width:2px;
+  classDef core fill:#DAF0EE,stroke:#3B413C,color:#0b0b0b,stroke-width:2px;
+
+  class LP-L1-Home muted
+  class LP-L1-Back muted
+  class LP-L1-Kundresa seg
+  class LP-L1-Behov,LP-L1-Pilot90,LP-L1-Inforande,LP-L1-Stod fund
+  class LP-L1-Dev,LP-L1-Stage,LP-L1-Prod,LP-L1-Monitor core
+
+  style BusinessJourney fill:#f9fbfb,stroke:#3B413C,stroke-width:1px;
+  style TechJourney fill:#f9fbfb,stroke:#3B413C,stroke-width:1px;
+    </div>
+  </div>
+  <script>mermaid.initialize({startOnLoad:true});</script>
+</body>
+</html>

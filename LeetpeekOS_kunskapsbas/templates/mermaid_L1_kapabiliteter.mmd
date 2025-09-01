@@ -1,0 +1,24 @@
+flowchart TB
+  LP-L1-Home[Home] --> LP-L1-Back[⬅︎ Tillbaka]
+  LP-L1-Back --> LP-L1-Kap[Kapabiliteter]
+
+  LP-L1-Kap --> K1[Datasuveränitet]
+  LP-L1-Kap --> K2[Kunskapssök]
+  LP-L1-Kap --> K3[Teams]
+  LP-L1-Kap --> K4[OCR]
+  LP-L1-Kap --> K5[Agenter]
+
+  %% Länka valda till L2‑playbooks
+  K1 --> P1[PoC kommun]
+  K3 --> P2[Teams Go‑Live]
+  K4 --> P3[OCR→Index]
+
+  %% Clicks
+  click LP-L1-Home "/index.html" _self
+  click LP-L1-Back "/index.html" _self
+  click P1 "/l2/poc_kommun.html" _self
+  click P2 "/l2/teams_golive.html" _self
+  click P3 "/l2/ocr_index.html" _self
+
+  %% Färger
+  classDef cap fill:#66969B,stroke:#3B413C,color:#ffffff;

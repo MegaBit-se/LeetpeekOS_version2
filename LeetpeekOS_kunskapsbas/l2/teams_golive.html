@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leetpeek OS - Teams Go‑Live</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <style>
+    html,body{margin:0;padding:0}
+    .wrap{padding:16px;max-width:1400px;margin:0 auto}
+    .mermaid{min-height:60vh}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="mermaid">
+flowchart LR
+  LP-L2-Home[Home]
+  LP-L2-Back[⬅︎ Tillbaka]
+  LP-L2-TeamsGolive[Teams Go‑Live]
+  
+  D[Demo]
+  K[Konfig]
+  P[Pilot]
+  G[Go‑Live]
+  U[Uppföljning]
+  
+  LP-L2-Home --> LP-L2-Back --> LP-L2-TeamsGolive
+  LP-L2-TeamsGolive --> D --> K --> P --> G --> U
+  
+  subgraph Details[Detaljer]
+    D1[Funktioner]
+    D2[Integration]
+    D3[Säkerhet]
+    D1 --> D2 --> D3
+  end
+  
+  D --> Details
+  Details --> K
+
+  click LP-L2-Home "../index.html" _self
+  click LP-L2-Back "../l1/kapabiliteter.html" _self
+
+  classDef muted fill:#f4f6f7,stroke:#b0b6b8,color:#6b7377,stroke-width:1px;
+  classDef seg fill:#DAF0EE,stroke:#3B413C,color:#3B413C,stroke-width:2px;
+  classDef core fill:#DAF0EE,stroke:#3B413C,color:#0b0b0b,stroke-width:2px;
+  classDef val fill:#94D1BE,stroke:#3B413C,color:#0b0b0b,stroke-width:2px;
+
+  class LP-L2-Home muted
+  class LP-L2-Back muted
+  class LP-L2-TeamsGolive seg
+  class D,K,P,G core
+  class U val
+  class D1,D2,D3 core
+
+  style Details fill:#f9fbfb,stroke:#3B413C,stroke-width:1px;
+    </div>
+  </div>
+  <script>mermaid.initialize({startOnLoad:true});</script>
+</body>
+</html>

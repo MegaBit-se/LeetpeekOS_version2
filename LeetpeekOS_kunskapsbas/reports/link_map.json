@@ -1,0 +1,786 @@
+{
+  "total_links": 130,
+  "broken_count": 0,
+  "links": [
+    {
+      "from_file": "index.html",
+      "node": "LP-L0-Problem",
+      "target": "l1/problem.html",
+      "exists": true
+    },
+    {
+      "from_file": "index.html",
+      "node": "LP-L0-Malgrupper",
+      "target": "l1/malgrupper.html",
+      "exists": true
+    },
+    {
+      "from_file": "index.html",
+      "node": "LP-L0-Principer",
+      "target": "l1/principer.html",
+      "exists": true
+    },
+    {
+      "from_file": "index.html",
+      "node": "LP-L0-LeetpeekKit",
+      "target": "l1/kapabiliteter.html",
+      "exists": true
+    },
+    {
+      "from_file": "index.html",
+      "node": "LP-L0-MVPCore",
+      "target": "l1/plattform.html",
+      "exists": true
+    },
+    {
+      "from_file": "index.html",
+      "node": "LP-L0-PilotGoLive",
+      "target": "l1/kundresa.html",
+      "exists": true
+    },
+    {
+      "from_file": "index.html",
+      "node": "LP-L0-In",
+      "target": "l1/inportar.html",
+      "exists": true
+    },
+    {
+      "from_file": "index.html",
+      "node": "LP-L0-Ut",
+      "target": "l1/utportar.html",
+      "exists": true
+    },
+    {
+      "from_file": "index.html",
+      "node": "LP-L0-Varde",
+      "target": "l1/varde.html",
+      "exists": true
+    },
+    {
+      "from_file": "index.html",
+      "node": "LP-L0-OSLGDPR",
+      "target": "l1/sakerhet.html",
+      "exists": true
+    },
+    {
+      "from_file": "index.html",
+      "node": "LP-L0-DevToggle",
+      "target": "index_dev.html",
+      "exists": true
+    },
+    {
+      "from_file": "index_dev.html",
+      "node": "LP-L0-Ingress",
+      "target": "l1/plattform.html",
+      "exists": true
+    },
+    {
+      "from_file": "index_dev.html",
+      "node": "LP-L0-Identitet",
+      "target": "l1/plattform.html",
+      "exists": true
+    },
+    {
+      "from_file": "index_dev.html",
+      "node": "LP-L0-Gateway",
+      "target": "l1/plattform.html",
+      "exists": true
+    },
+    {
+      "from_file": "index_dev.html",
+      "node": "LP-L0-Routing",
+      "target": "l1/plattform.html",
+      "exists": true
+    },
+    {
+      "from_file": "index_dev.html",
+      "node": "LP-L0-Inferens",
+      "target": "l1/plattform.html",
+      "exists": true
+    },
+    {
+      "from_file": "index_dev.html",
+      "node": "LP-L0-Data",
+      "target": "l1/plattform.html",
+      "exists": true
+    },
+    {
+      "from_file": "index_dev.html",
+      "node": "LP-L0-Automation",
+      "target": "l1/plattform.html",
+      "exists": true
+    },
+    {
+      "from_file": "index_dev.html",
+      "node": "LP-L0-UI",
+      "target": "l1/plattform.html",
+      "exists": true
+    },
+    {
+      "from_file": "index_dev.html",
+      "node": "LP-L0-Observability",
+      "target": "l1/plattform.html",
+      "exists": true
+    },
+    {
+      "from_file": "index_dev.html",
+      "node": "LP-L0-ExecToggle",
+      "target": "index.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/affarsnav.html",
+      "node": "LP-L1-Home",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/affarsnav.html",
+      "node": "LP-L1-Back",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/affarsnav.html",
+      "node": "LP-L1-Website",
+      "target": "../os/site/index.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/inportar.html",
+      "node": "LP-L1-Home",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/inportar.html",
+      "node": "LP-L1-Back",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/kapabiliteter.html",
+      "node": "LP-L1-Home",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/kapabiliteter.html",
+      "node": "LP-L1-Back",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/kapabiliteter.html",
+      "node": "LP-L1-OCR",
+      "target": "../os/arkiv/index.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/kapabiliteter.html",
+      "node": "LP-L1-Playbooks",
+      "target": "../l2/poc_kommun.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/kapabiliteter.html",
+      "node": "LP-L1-Sakerhetskrav",
+      "target": "sakerhet.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/kundresa.html",
+      "node": "LP-L1-Home",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/kundresa.html",
+      "node": "LP-L1-Back",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/malgrupper.html",
+      "node": "LP-L1-Home",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/malgrupper.html",
+      "node": "LP-L1-Back",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/offentlig.html",
+      "node": "LP-OFF-Home",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/offentlig.html",
+      "node": "LP-OFF-Back",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/offentlig.html",
+      "node": "LP-OFF-DPIA",
+      "target": "sakerhet.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/offentlig.html",
+      "node": "LP-OFF-Procurement",
+      "target": "../l2/pre-upphandling.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/offentlig.html",
+      "node": "LP-OFF-Pilot",
+      "target": "../l2/poc_kommun.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/offentlig.html",
+      "node": "LP-OFF-Teams",
+      "target": "../l2/teams_golive.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/offentlig.html",
+      "node": "LP-OFF-Export",
+      "target": "sakerhet.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/plattform.html",
+      "node": "LP-L1-Home",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/plattform.html",
+      "node": "LP-L1-Back",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/plattform.html",
+      "node": "LP-L1-Gateway",
+      "target": "../os/mvp/index.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/positionering.html",
+      "node": "LP-POS-Home",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/positionering.html",
+      "node": "LP-POS-Back",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/positionering.html",
+      "node": "LP-POS-Why",
+      "target": "problem.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/positionering.html",
+      "node": "LP-POS-Norrland",
+      "target": "malgrupper.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/positionering.html",
+      "node": "LP-POS-Green",
+      "target": "malgrupper.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/positionering.html",
+      "node": "LP-POS-Data",
+      "target": "sakerhet.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/positionering.html",
+      "node": "LP-POS-Local",
+      "target": "plattform.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/positionering.html",
+      "node": "LP-POS-Trust",
+      "target": "sakerhet.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/positionering.html",
+      "node": "LP-POS-Skill",
+      "target": "kapabiliteter.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/principer.html",
+      "node": "LP-L1-Home",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/principer.html",
+      "node": "LP-L1-Back",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/problem.html",
+      "node": "LP-L1-Home",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/problem.html",
+      "node": "LP-L1-Back",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/sakerhet.html",
+      "node": "LP-L1-Home",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/sakerhet.html",
+      "node": "LP-L1-Back",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/utportar.html",
+      "node": "LP-L1-Home",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/utportar.html",
+      "node": "LP-L1-Back",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/varde.html",
+      "node": "LP-L1-Home",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "l1/varde.html",
+      "node": "LP-L1-Back",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "l2/ocr_index.html",
+      "node": "LP-L2-Home",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "l2/ocr_index.html",
+      "node": "LP-L2-Back",
+      "target": "../l1/kapabiliteter.html",
+      "exists": true
+    },
+    {
+      "from_file": "l2/poc_kommun.html",
+      "node": "LP-L2-Home",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "l2/poc_kommun.html",
+      "node": "LP-L2-Back",
+      "target": "../l1/kapabiliteter.html",
+      "exists": true
+    },
+    {
+      "from_file": "l2/pre-upphandling.html",
+      "node": "LP-PRE-Home",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "l2/pre-upphandling.html",
+      "node": "LP-PRE-Back",
+      "target": "../l1/offentlig.html",
+      "exists": true
+    },
+    {
+      "from_file": "l2/pre-upphandling.html",
+      "node": "LP-PRE-Stakeholders",
+      "target": "../l1/offentlig.html",
+      "exists": true
+    },
+    {
+      "from_file": "l2/pre-upphandling.html",
+      "node": "LP-PRE-Need",
+      "target": "../l1/kundresa.html",
+      "exists": true
+    },
+    {
+      "from_file": "l2/pre-upphandling.html",
+      "node": "LP-PRE-Requirements",
+      "target": "../l1/positionering.html",
+      "exists": true
+    },
+    {
+      "from_file": "l2/pre-upphandling.html",
+      "node": "LP-PRE-DPIA",
+      "target": "../l1/sakerhet.html",
+      "exists": true
+    },
+    {
+      "from_file": "l2/pre-upphandling.html",
+      "node": "LP-PRE-Scope",
+      "target": "poc_kommun.html",
+      "exists": true
+    },
+    {
+      "from_file": "l2/pre-upphandling.html",
+      "node": "LP-PRE-RFI",
+      "target": "../l1/affarsnav.html",
+      "exists": true
+    },
+    {
+      "from_file": "l2/pre-upphandling.html",
+      "node": "LP-PRE-Decision",
+      "target": "../l1/kundresa.html",
+      "exists": true
+    },
+    {
+      "from_file": "l2/teams_golive.html",
+      "node": "LP-L2-Home",
+      "target": "../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "l2/teams_golive.html",
+      "node": "LP-L2-Back",
+      "target": "../l1/kapabiliteter.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/arkiv/index-rag.html",
+      "node": "LP-IDX-Home",
+      "target": "../../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/arkiv/index-rag.html",
+      "node": "LP-IDX-Back",
+      "target": "index.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/arkiv/index.html",
+      "node": "LP-ARK-Home",
+      "target": "../../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/arkiv/index.html",
+      "node": "LP-ARK-Back",
+      "target": "../../l1/kapabiliteter.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/arkiv/index.html",
+      "node": "LP-ARK-OSL",
+      "target": "juridik.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/arkiv/index.html",
+      "node": "LP-ARK-DPIA",
+      "target": "juridik.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/arkiv/index.html",
+      "node": "LP-ARK-Ingest",
+      "target": "ingest-ocr.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/arkiv/index.html",
+      "node": "LP-ARK-Index",
+      "target": "index-rag.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/arkiv/index.html",
+      "node": "LP-ARK-Teams",
+      "target": "teams.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/arkiv/index.html",
+      "node": "LP-ARK-Export",
+      "target": "lifecycle.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/arkiv/ingest-ocr.html",
+      "node": "LP-ING-Home",
+      "target": "../../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/arkiv/ingest-ocr.html",
+      "node": "LP-ING-Back",
+      "target": "index.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/arkiv/juridik.html",
+      "node": "LP-JUR-Home",
+      "target": "../../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/arkiv/juridik.html",
+      "node": "LP-JUR-Back",
+      "target": "index.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/arkiv/lifecycle.html",
+      "node": "LP-LIF-Home",
+      "target": "../../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/arkiv/lifecycle.html",
+      "node": "LP-LIF-Back",
+      "target": "index.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/arkiv/teams.html",
+      "node": "LP-TEA-Home",
+      "target": "../../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/arkiv/teams.html",
+      "node": "LP-TEA-Back",
+      "target": "index.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/mvp/hw-deploy.html",
+      "node": "LP-HW-Home",
+      "target": "../../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/mvp/hw-deploy.html",
+      "node": "LP-HW-Back",
+      "target": "index.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/mvp/index.html",
+      "node": "LP-MVP-Home",
+      "target": "../../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/mvp/index.html",
+      "node": "LP-MVP-Back",
+      "target": "../../l1/plattform.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/mvp/index.html",
+      "node": "LP-MVP-Hardware",
+      "target": "hw-deploy.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/mvp/index.html",
+      "node": "LP-MVP-RAG",
+      "target": "rag.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/mvp/index.html",
+      "node": "LP-MVP-Teams",
+      "target": "teams.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/mvp/index.html",
+      "node": "LP-MVP-N8N",
+      "target": "n8n.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/mvp/index.html",
+      "node": "LP-MVP-Security",
+      "target": "security.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/mvp/n8n.html",
+      "node": "LP-N8N-Home",
+      "target": "../../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/mvp/n8n.html",
+      "node": "LP-N8N-Back",
+      "target": "index.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/mvp/rag.html",
+      "node": "LP-RAG-Home",
+      "target": "../../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/mvp/rag.html",
+      "node": "LP-RAG-Back",
+      "target": "index.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/mvp/security.html",
+      "node": "LP-SEC-Home",
+      "target": "../../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/mvp/security.html",
+      "node": "LP-SEC-Back",
+      "target": "index.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/mvp/teams.html",
+      "node": "LP-TEAMS-Home",
+      "target": "../../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/mvp/teams.html",
+      "node": "LP-TEAMS-Back",
+      "target": "index.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/site/analytics.html",
+      "node": "LP-ANA-Home",
+      "target": "../../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/site/analytics.html",
+      "node": "LP-ANA-Back",
+      "target": "index.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/site/build-lead.html",
+      "node": "LP-BLD-Home",
+      "target": "../../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/site/build-lead.html",
+      "node": "LP-BLD-Back",
+      "target": "index.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/site/content-plan.html",
+      "node": "LP-CNT-Home",
+      "target": "../../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/site/content-plan.html",
+      "node": "LP-CNT-Back",
+      "target": "index.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/site/index.html",
+      "node": "LP-SITE-Home",
+      "target": "../../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/site/index.html",
+      "node": "LP-SITE-Back",
+      "target": "../../l1/affarsnav.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/site/index.html",
+      "node": "LP-SITE-Hero",
+      "target": "build-lead.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/site/index.html",
+      "node": "LP-SITE-Tech",
+      "target": "content-plan.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/site/index.html",
+      "node": "LP-SITE-Why",
+      "target": "analytics.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/site/index.html",
+      "node": "LP-SITE-About",
+      "target": "content-plan.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/site/index.html",
+      "node": "LP-SITE-FAQ",
+      "target": "content-plan.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/site/index.html",
+      "node": "LP-SITE-Contact",
+      "target": "lead-funnel.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/site/lead-funnel.html",
+      "node": "LP-LEAD-Home",
+      "target": "../../index.html",
+      "exists": true
+    },
+    {
+      "from_file": "os/site/lead-funnel.html",
+      "node": "LP-LEAD-Back",
+      "target": "index.html",
+      "exists": true
+    }
+  ]
+}

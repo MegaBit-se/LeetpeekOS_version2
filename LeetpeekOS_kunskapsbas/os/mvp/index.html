@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leetpeek OS - MVP</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <style>
+    html,body{margin:0;padding:0}
+    .wrap{padding:16px;max-width:1400px;margin:0 auto}
+    .mermaid{min-height:60vh}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="mermaid">
+flowchart LR
+  LP-MVP-Home[Home]
+  LP-MVP-Back[⬅︎ Back]
+  
+  LP-MVP-Hardware[Hårdvara]
+  LP-MVP-LLM[LLM-stack]
+  LP-MVP-RAG[RAG/Index]
+  LP-MVP-Teams[Teams]
+  LP-MVP-N8N[n8n-brygga]
+  LP-MVP-Security[Säkerhet]
+  LP-MVP-Pilot[Pilot Go-Live]
+
+  LP-MVP-Home --> LP-MVP-Back
+  LP-MVP-Hardware --> LP-MVP-LLM --> LP-MVP-RAG --> LP-MVP-Teams --> LP-MVP-N8N --> LP-MVP-Security --> LP-MVP-Pilot
+
+  click LP-MVP-Home "../../index.html" _self
+  click LP-MVP-Back "../../l1/plattform.html" _self
+  click LP-MVP-Hardware "hw-deploy.html" _self
+  click LP-MVP-RAG "rag.html" _self
+  click LP-MVP-Teams "teams.html" _self
+  click LP-MVP-N8N "n8n.html" _self
+  click LP-MVP-Security "security.html" _self
+
+  classDef done fill:#94D1BE,stroke:#3B413C,stroke-width:2px;
+  classDef progress fill:#FFEDB5,stroke:#C97E00,stroke-width:2px;
+  classDef planned fill:#ECEFF1,stroke:#90A4AE,stroke-width:2px;
+  classDef blocked fill:#FDE0E0,stroke:#D32F2F,stroke-width:2px;
+  classDef muted fill:#f4f6f7,stroke:#b0b6b8,color:#6b7377,stroke-width:1px;
+
+  class LP-MVP-Home,LP-MVP-Back muted
+  class LP-MVP-Hardware,LP-MVP-LLM progress
+  class LP-MVP-RAG,LP-MVP-Teams,LP-MVP-N8N,LP-MVP-Security,LP-MVP-Pilot planned
+    </div>
+  </div>
+  <script>mermaid.initialize({startOnLoad:true});</script>
+</body>
+</html>

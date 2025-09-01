@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leetpeek OS - Analytics</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <style>
+    html,body{margin:0;padding:0}
+    .wrap{padding:16px;max-width:1400px;margin:0 auto}
+    .mermaid{min-height:60vh}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="mermaid">
+flowchart LR
+  LP-ANA-Home[Home]
+  LP-ANA-Back[⬅︎ Back]
+  
+  LP-ANA-Policy[Policy/No-track]
+  LP-ANA-Consent[Consent]
+  LP-ANA-Event[Event-karta]
+  LP-ANA-Server[Server-logg]
+  LP-ANA-Client[Klient-event]
+  LP-ANA-Dashboard[Dashboard]
+  LP-ANA-CWV[CWV-monitor]
+
+  LP-ANA-Home --> LP-ANA-Back
+  LP-ANA-Policy --> LP-ANA-Consent --> LP-ANA-Event --> LP-ANA-Server --> LP-ANA-Client --> LP-ANA-Dashboard --> LP-ANA-CWV
+
+  click LP-ANA-Home "../../index.html" _self
+  click LP-ANA-Back "index.html" _self
+
+  classDef done fill:#94D1BE,stroke:#3B413C,stroke-width:2px;
+  classDef progress fill:#FFEDB5,stroke:#C97E00,stroke-width:2px;
+  classDef planned fill:#ECEFF1,stroke:#90A4AE,stroke-width:2px;
+  classDef blocked fill:#FDE0E0,stroke:#D32F2F,stroke-width:2px;
+  classDef muted fill:#f4f6f7,stroke:#b0b6b8,color:#6b7377,stroke-width:1px;
+
+  class LP-ANA-Home,LP-ANA-Back muted
+  class LP-ANA-Policy,LP-ANA-Consent,LP-ANA-Event,LP-ANA-Server,LP-ANA-Client,LP-ANA-Dashboard,LP-ANA-CWV progress
+    </div>
+  </div>
+  <script>mermaid.initialize({startOnLoad:true});</script>
+</body>
+</html>

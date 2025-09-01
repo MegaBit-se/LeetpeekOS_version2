@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leetpeek OS - Kapabiliteter</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <style>
+    html,body{margin:0;padding:0}
+    .wrap{padding:16px;max-width:1400px;margin:0 auto}
+    .mermaid{min-height:60vh}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="mermaid">
+flowchart LR
+  LP-L1-Home[Home]
+  LP-L1-Back[⬅︎ Tillbaka]
+
+  LP-L1-Datasuveranitet[Datasuveränitet]
+  LP-L1-RAG[RAG]
+  LP-L1-Teams[Teams]
+  LP-L1-OCR[OCR]
+  LP-L1-Agenter[Agenter]
+  LP-L1-Playbooks[Playbooks]
+  LP-L1-Sakerhetskrav[Säkerhetskrav]
+
+  LP-L1-Home --> LP-L1-Back
+  LP-L1-Datasuveranitet --> LP-L1-RAG --> LP-L1-Teams --> LP-L1-OCR --> LP-L1-Agenter --> LP-L1-Playbooks --> LP-L1-Sakerhetskrav
+
+  click LP-L1-Home "../index.html" _self
+  click LP-L1-Back "../index.html" _self
+  click LP-L1-OCR "../os/arkiv/index.html" _self
+  click LP-L1-Playbooks "../l2/poc_kommun.html" _self
+  click LP-L1-Sakerhetskrav "sakerhet.html" _self
+
+  %% Classes
+  classDef muted fill:#f4f6f7,stroke:#b0b6b8,color:#6b7377,stroke-width:1px;
+  classDef cap fill:#66969B,stroke:#3B413C,color:#ffffff,stroke-width:2px;
+  classDef seg fill:#DAF0EE,stroke:#3B413C,color:#3B413C,stroke-width:2px;
+
+  class LP-L1-Home,LP-L1-Back muted
+  class LP-L1-Datasuveranitet,LP-L1-RAG,LP-L1-Teams,LP-L1-OCR,LP-L1-Agenter cap
+  class LP-L1-Playbooks,LP-L1-Sakerhetskrav seg
+    </div>
+  </div>
+  <script>mermaid.initialize({startOnLoad:true});</script>
+</body>
+</html>

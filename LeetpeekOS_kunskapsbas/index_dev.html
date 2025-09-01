@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leetpeek OS - Dev</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <style>
+    html,body{margin:0;padding:0}
+    .wrap{padding:16px;max-width:1400px;margin:0 auto}
+    .mermaid{min-height:60vh}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="mermaid">
+flowchart LR
+  %% ---------- Leetpeek OS – Dev L0 (machine) ----------
+
+  %% Core pipeline (left→right)
+  LP-L0-Ingress[Ingress]
+  LP-L0-Identitet[Identitet]
+  LP-L0-Gateway[Gateway]
+  LP-L0-Routing[Routing]
+  LP-L0-Inferens[Inferens]
+  LP-L0-Data[Data]
+  
+  %% Supporting systems
+  LP-L0-Automation[Automation]
+  LP-L0-UI[UI]
+  LP-L0-Observability[Observability]
+  
+  %% Spine
+  LP-L0-OSLGDPR[OSL/GDPR]
+  
+  %% Toggle
+  LP-L0-ExecToggle[Exec-vy]
+
+  %% Main pipeline flow
+  LP-L0-Ingress --> LP-L0-Identitet --> LP-L0-Gateway --> LP-L0-Routing --> LP-L0-Inferens --> LP-L0-Data
+
+  %% Supporting connections (muted/secondary)
+  LP-L0-Automation -.-> LP-L0-Gateway
+  LP-L0-UI -.-> LP-L0-Gateway
+  LP-L0-Observability -.-> LP-L0-Routing
+  LP-L0-Observability -.-> LP-L0-Data
+
+  %% Spine connections (dashed)
+  LP-L0-OSLGDPR -. påverkar .- LP-L0-Identitet
+  LP-L0-OSLGDPR -. påverkar .- LP-L0-Data
+
+  %% Pipeline clicks to platform
+  click LP-L0-Ingress "l1/plattform.html" _self
+  click LP-L0-Identitet "l1/plattform.html" _self
+  click LP-L0-Gateway "l1/plattform.html" _self
+  click LP-L0-Routing "l1/plattform.html" _self
+  click LP-L0-Inferens "l1/plattform.html" _self
+  click LP-L0-Data "l1/plattform.html" _self
+  click LP-L0-Automation "l1/plattform.html" _self
+  click LP-L0-UI "l1/plattform.html" _self
+  click LP-L0-Observability "l1/plattform.html" _self
+
+  %% Toggle link
+  click LP-L0-ExecToggle "index.html" _self
+
+  %% Färger enligt styleguide
+  classDef seg fill:#DAF0EE,stroke:#3B413C,color:#3B413C,stroke-width:2px;
+  classDef fund fill:#94D1BE,stroke:#3B413C,color:#0b0b0b,stroke-width:2px;
+  classDef cap fill:#66969B,stroke:#3B413C,color:#ffffff,stroke-width:2px;
+  classDef core fill:#DAF0EE,stroke:#3B413C,color:#0b0b0b,stroke-width:2px;
+  classDef gov fill:#3B413C,stroke:#3B413C,color:#ffffff,stroke-width:2px;
+  classDef io fill:#DAF0EE,stroke:#3B413C,color:#0b0b0b,stroke-width:2px;
+  classDef val fill:#94D1BE,stroke:#3B413C,color:#0b0b0b,stroke-width:2px;
+  classDef muted fill:#f4f6f7,stroke:#b0b6b8,color:#6b7377,stroke-width:1px;
+
+  class LP-L0-Ingress io
+  class LP-L0-Identitet core
+  class LP-L0-Gateway core
+  class LP-L0-Routing core
+  class LP-L0-Inferens cap
+  class LP-L0-Data core
+  class LP-L0-Automation core
+  class LP-L0-UI io
+  class LP-L0-Observability core
+  class LP-L0-OSLGDPR gov
+  class LP-L0-ExecToggle muted
+    </div>
+  </div>
+  <script>mermaid.initialize({startOnLoad:true});</script>
+</body>
+</html>

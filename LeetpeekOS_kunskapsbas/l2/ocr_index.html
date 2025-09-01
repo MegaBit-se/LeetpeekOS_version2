@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leetpeek OS - OCR→Index</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <style>
+    html,body{margin:0;padding:0}
+    .wrap{padding:16px;max-width:1400px;margin:0 auto}
+    .mermaid{min-height:60vh}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="mermaid">
+flowchart TB
+  %% L2 Phase Counting: Subgraphs = 1 logical node each
+  LP-L2-Home[Home]
+  LP-L2-Back[⬅︎ Tillbaka]
+  LP-L2-OcrIndex[OCR→Index]
+  
+  subgraph O[OCR]
+    O1[Läs PDF]
+    O2[Extrahera]
+    O3[Klar]
+    O1 --> O2 --> O3
+  end
+  
+  subgraph C[Chunk]
+    C1[Analys]
+    C2[Dela]
+    C3[Validera]
+    C1 --> C2 --> C3
+  end
+  
+  subgraph E[Embed]
+    E1[Batch]
+    E2[Vektorer]
+    E3[Spara]
+    E1 --> E2 --> E3
+  end
+  
+  subgraph Q[QC]
+    Q1[Sampling]
+    Q2[Bedöm]
+    Q3[Rapport]
+    Q1 --> Q2 --> Q3
+  end
+
+  LP-L2-Home --> LP-L2-Back --> LP-L2-OcrIndex
+  LP-L2-OcrIndex --> O --> T1[Text]
+  T1 --> C --> T2[Chunks]
+  T2 --> E --> T3[Vektorer]
+  T3 --> Q --> R[Klar]
+
+  click LP-L2-Home "../index.html" _self
+  click LP-L2-Back "../l1/kapabiliteter.html" _self
+
+  classDef muted fill:#f4f6f7,stroke:#b0b6b8,color:#6b7377,stroke-width:1px;
+  classDef seg fill:#DAF0EE,stroke:#3B413C,color:#3B413C,stroke-width:2px;
+  classDef core fill:#DAF0EE,stroke:#3B413C,color:#0b0b0b,stroke-width:2px;
+  classDef val fill:#94D1BE,stroke:#3B413C,color:#0b0b0b,stroke-width:2px;
+
+  class LP-L2-Home muted
+  class LP-L2-Back muted
+  class LP-L2-OcrIndex seg
+  class O1,O2,C1,C2,C3,E1,E2,E3,Q1,Q2,Q3 core
+  class O3,R val
+  class T1,T2,T3 muted
+
+  style O fill:#f9fbfb,stroke:#3B413C,stroke-width:1px;
+  style C fill:#f9fbfb,stroke:#3B413C,stroke-width:1px;
+  style E fill:#f9fbfb,stroke:#3B413C,stroke-width:1px;
+  style Q fill:#f9fbfb,stroke:#3B413C,stroke-width:1px;
+    </div>
+  </div>
+  <script>mermaid.initialize({startOnLoad:true});</script>
+</body>
+</html>

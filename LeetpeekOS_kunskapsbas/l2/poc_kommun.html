@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leetpeek OS - PoC kommun</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <style>
+    html,body{margin:0;padding:0}
+    .wrap{padding:16px;max-width:1400px;margin:0 auto}
+    .mermaid{min-height:60vh}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="mermaid">
+flowchart LR
+  LP-L2-Home[Home]
+  LP-L2-Back[⬅︎ Tillbaka]
+  LP-L2-PocKommun[PoC kommun]
+
+  subgraph F1[Förberedelse]
+    A1[Stakeholders]
+    A2[Datakartor]
+    A3[Säkerhet]
+    A1 --> A2 --> A3
+  end
+  
+  subgraph F2[Installation]
+    B1[On-prem]
+    B2[Index]
+    B3[Teams pilot]
+    B1 --> B2 --> B3
+  end
+  
+  subgraph F3[Test & QC]
+    C1[Funktion]
+    C2[Användare]
+    C3[Compliance]
+    C1 --> C2 --> C3
+  end
+
+  LP-L2-Home --> LP-L2-Back --> LP-L2-PocKommun
+  LP-L2-PocKommun --> F1 --> D1{Go?}
+  D1 -->|Ja| F2 --> D2{OK?}
+  D2 -->|Ja| F3 --> R[Resultat]
+  D1 -->|Nej| X[Stopp]
+  D2 -->|Nej| X
+
+  click LP-L2-Home "../index.html" _self
+  click LP-L2-Back "../l1/kapabiliteter.html" _self
+
+  classDef muted fill:#f4f6f7,stroke:#b0b6b8,color:#6b7377,stroke-width:1px;
+  classDef seg fill:#DAF0EE,stroke:#3B413C,color:#3B413C,stroke-width:2px;
+  classDef core fill:#DAF0EE,stroke:#3B413C,color:#0b0b0b,stroke-width:2px;
+  classDef decision fill:#ffffff,stroke:#3B413C,stroke-width:2px,stroke-dasharray:4 3;
+  classDef val fill:#94D1BE,stroke:#3B413C,color:#0b0b0b,stroke-width:2px;
+
+  class LP-L2-Home muted
+  class LP-L2-Back muted
+  class LP-L2-PocKommun seg
+  class A1,A2,A3,B1,B2,B3,C1,C2,C3 core
+  class D1,D2 decision
+  class R val
+  class X muted
+
+  style F1 fill:#f9fbfb,stroke:#3B413C,stroke-width:1px;
+  style F2 fill:#f9fbfb,stroke:#3B413C,stroke-width:1px;
+  style F3 fill:#f9fbfb,stroke:#3B413C,stroke-width:1px;
+    </div>
+  </div>
+  <script>mermaid.initialize({startOnLoad:true});</script>
+</body>
+</html>
