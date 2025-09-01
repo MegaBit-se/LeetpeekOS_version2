@@ -52,7 +52,10 @@ export const maps = {
         "id": "finansiering",
         "text": "Finansiering",
         "status": "progress",
-        "link": "#/os/strategy/finansiering"
+        "link": "#/os/strategy/finansiering",
+        "tags": [
+          "blocked-deadline"
+        ]
       }
     ],
     "connections": [
@@ -260,7 +263,14 @@ export const maps = {
         "id": "finans",
         "text": "Finansiering",
         "status": "progress",
-        "link": "#/os/strategy/finansiering"
+        "link": "#/os/strategy/finansiering",
+        "tags": [
+          "blocked-deadline",
+          "vinnova-20250910",
+          "tillvaxt-20250916",
+          "echoes-20250916",
+          "raa-20250131"
+        ]
       }
     ],
     "connections": [
@@ -291,6 +301,272 @@ export const maps = {
       [
         "finans",
         "forstudie"
+      ]
+    ]
+  },
+  "/os/mvp/index": {
+    "title": "L2: MVP-Översikt",
+    "layout": "cluster",
+    "subgraphs": [
+      {
+        "name": "DevOps",
+        "nodes": [
+          "ansible",
+          "cicd"
+        ]
+      },
+      {
+        "name": "Infrastruktur",
+        "nodes": [
+          "hardvara",
+          "llm-stack"
+        ]
+      }
+    ],
+    "nodes": [
+      {
+        "id": "ansible",
+        "text": "Ansible/CI 🎥",
+        "status": "progress",
+        "link": "/os/mvp/index.md",
+        "tags": [
+          "devops"
+        ],
+        "video": "/videos/karnan.mp4"
+      },
+      {
+        "id": "cicd",
+        "text": "CI/CD",
+        "status": "planned",
+        "link": "#",
+        "tags": [
+          "devops"
+        ]
+      },
+      {
+        "id": "hardvara",
+        "text": "Hardvara",
+        "status": "planned",
+        "link": "#"
+      },
+      {
+        "id": "llm-stack",
+        "text": "LLM Stack",
+        "status": "planned",
+        "link": "#"
+      },
+      {
+        "id": "backend",
+        "text": "FastAPI",
+        "status": "progress",
+        "link": "#"
+      },
+      {
+        "id": "export",
+        "text": "Export",
+        "status": "planned",
+        "link": "#"
+      },
+      {
+        "id": "overvak",
+        "text": "Övervakning",
+        "status": "planned",
+        "link": "#"
+      }
+    ],
+    "connections": [
+      [
+        "ansible",
+        "hardvara"
+      ],
+      [
+        "ansible",
+        "cicd"
+      ],
+      [
+        "backend",
+        "llm-stack"
+      ],
+      [
+        "export",
+        "overvak"
+      ]
+    ]
+  },
+  "/os/arkiv/index": {
+    "title": "L2: Arkiv-Översikt",
+    "layout": "cluster",
+    "subgraphs": [
+      {
+        "name": "Kärnflöde",
+        "nodes": [
+          "ingest",
+          "ocr",
+          "index",
+          "rag"
+        ]
+      },
+      {
+        "name": "Styrning",
+        "nodes": [
+          "juridik",
+          "dpia"
+        ]
+      }
+    ],
+    "nodes": [
+      {
+        "id": "ingest",
+        "text": "Ingest",
+        "status": "planned",
+        "link": "#"
+      },
+      {
+        "id": "ocr",
+        "text": "OCR",
+        "status": "planned",
+        "link": "#"
+      },
+      {
+        "id": "index",
+        "text": "Index",
+        "status": "planned",
+        "link": "#"
+      },
+      {
+        "id": "rag",
+        "text": "RAG",
+        "status": "planned",
+        "link": "#"
+      },
+      {
+        "id": "juridik",
+        "text": "Juridik",
+        "status": "progress",
+        "link": "/os/arkiv/index.md"
+      },
+      {
+        "id": "dpia",
+        "text": "DPIA",
+        "status": "planned",
+        "link": "#"
+      },
+      {
+        "id": "lifecycle",
+        "text": "Lifecycle",
+        "status": "planned",
+        "link": "#"
+      }
+    ],
+    "connections": [
+      [
+        "ingest",
+        "ocr"
+      ],
+      [
+        "ocr",
+        "index"
+      ],
+      [
+        "index",
+        "rag"
+      ],
+      [
+        "juridik",
+        "dpia"
+      ],
+      [
+        "rag",
+        "lifecycle"
+      ]
+    ]
+  },
+  "/os/site/index": {
+    "title": "L2: Site-Översikt",
+    "layout": "cluster",
+    "subgraphs": [
+      {
+        "name": "Publikt",
+        "nodes": [
+          "hero",
+          "why",
+          "cta"
+        ]
+      },
+      {
+        "name": "Tillväxt",
+        "nodes": [
+          "lead",
+          "funnel",
+          "seo"
+        ]
+      }
+    ],
+    "nodes": [
+      {
+        "id": "hero",
+        "text": "Hero 🎥",
+        "status": "progress",
+        "link": "/os/site/index.md",
+        "video": "/videos/karnan.mp4"
+      },
+      {
+        "id": "why",
+        "text": "Why us",
+        "status": "planned",
+        "link": "#"
+      },
+      {
+        "id": "cta",
+        "text": "CTA",
+        "status": "planned",
+        "link": "#"
+      },
+      {
+        "id": "lead",
+        "text": "Lead",
+        "status": "planned",
+        "link": "#"
+      },
+      {
+        "id": "funnel",
+        "text": "Funnel",
+        "status": "planned",
+        "link": "#"
+      },
+      {
+        "id": "seo",
+        "text": "SEO",
+        "status": "planned",
+        "link": "#"
+      },
+      {
+        "id": "roadmap",
+        "text": "Roadmap",
+        "status": "planned",
+        "link": "#"
+      }
+    ],
+    "connections": [
+      [
+        "hero",
+        "lead"
+      ],
+      [
+        "lead",
+        "funnel"
+      ],
+      [
+        "funnel",
+        "seo"
+      ],
+      [
+        "seo",
+        "roadmap"
+      ],
+      [
+        "why",
+        "cta"
       ]
     ]
   }

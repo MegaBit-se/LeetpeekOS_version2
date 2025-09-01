@@ -9,14 +9,20 @@
     html,body{margin:0;padding:0}
     .controls{padding:8px}
     .mermaid{min-height:60vh;padding:16px}
+    .glow{animation:blink 1s steps(2,start) infinite}
+    @keyframes blink{to{visibility:hidden}}
+    #video-popup{position:absolute;display:none;border:1px solid #ccc;background:#000;z-index:10}
   </style>
 </head>
 <body>
   <div class="controls">
     <button id="home-btn">Home</button>
     <button id="back-btn">Back</button>
+    <input id="search" placeholder="Sök" />
+    <button id="play-path">Highlight Path</button>
   </div>
   <div class="mermaid"></div>
+  <video id="video-popup" width="200" controls></video>
   <script type="module" src="./app.js"></script>
 </body>
 </html>
