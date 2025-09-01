@@ -22,3 +22,22 @@ npm start
 ```
 
 This uses `npx serve` to preview the site locally.
+
+## How it works
+
+The diagram below uses Mermaid v10.9 to show how deployment and local development paths converge to the same static site.
+
+```mermaid
+%%{init: {"theme": "base", "flowchart": {"curve": "linear"}}}%%
+flowchart TB
+    A[Source files] --> B{Deploy?}
+    B -->|Yes| C[Docker build]
+    C --> D[Docker image]
+    D --> E[Nginx]
+    B -->|No| F[npx serve]
+    E --> H[Browser]
+    F --> H
+    H --> G[Viewer]
+```
+
+Both Docker and local development routes serve the same content to the viewer.
