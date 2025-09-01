@@ -11,8 +11,13 @@ const { maps } = require('../maps.js');
     const page = await browser.newPage();
     const url = `http://localhost:8000/#${key}`;
     await page.goto(url, { waitUntil: 'networkidle0' });
-    const file = key.replace(/[\\/]/g, '_') + '.pdf';
-    await page.pdf({ path: path.join(dist, file) });
+    const slug = key.split('/').filter(Boolean).pop();
+    const pdfFile = path.join(dist, `${slug}.pdf`);
+    await page.pdf({ path: pdfFile, format: 'A3', landscape: true });
+    const svg = await page.evaluate(() => document.querySelector('svg')?.outerHTML || '');
+    if (svg) {
+      fs.writeFileSync(path.join(dist, `${slug}.svg`), svg);
+    }
     await page.close();
   }
   await browser.close();

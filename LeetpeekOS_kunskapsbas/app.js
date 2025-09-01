@@ -1,25 +1,60 @@
 import { maps } from './maps.js';
 
 const searchEl = document.getElementById('search');
-const videoPopup = document.getElementById('video-popup');
+const videoModal = document.getElementById('video-modal');
+const modalVideo = videoModal.querySelector('video');
+const modalFallback = videoModal.querySelector('.fallback');
+const toastEl = document.getElementById('toast');
+
+function showToast(msg) {
+  toastEl.textContent = msg;
+  toastEl.classList.add('show');
+  setTimeout(() => toastEl.classList.remove('show'), 3000);
+}
+
+function applyDeadlines() {
+  const now = new Date();
+  for (const map of Object.values(maps)) {
+    if (!map.nodes) continue;
+    for (const node of map.nodes) {
+      if (node.deadline_at && node.urgency_threshold_days) {
+        const diff = (new Date(node.deadline_at) - now) / (1000 * 60 * 60 * 24);
+        if (diff <= node.urgency_threshold_days) {
+          node.status = 'blocked';
+          if (!node.text.includes('\u26A0')) node.text += ' \u26A0';
+        }
+      }
+    }
+  }
+}
 
 function renderStatus() {
   const container = document.querySelector('.mermaid');
-  container.innerHTML = '';
-  const table = document.createElement('table');
-  table.innerHTML = '<tr><th>Karta</th><th>Done</th><th>Progress</th><th>Planned</th><th>Blocked</th><th>Urgent</th></tr>';
-  for (const [k, m] of Object.entries(maps)) {
+  const totals = {done:0, progress:0, planned:0, blocked:0};
+  for (const m of Object.values(maps)) {
     if (!m.nodes) continue;
-    const counts = {done:0, progress:0, planned:0, blocked:0, urgent:[]};
     for (const n of m.nodes) {
-      counts[n.status] = (counts[n.status] || 0) + 1;
-      if (n.tags && n.tags.includes('blocked-deadline')) counts.urgent.push(n.text);
+      totals[n.status] = (totals[n.status] || 0) + 1;
     }
-    const tr = document.createElement('tr');
-    tr.innerHTML = `<td>${m.title || k}</td><td>${counts.done}</td><td>${counts.progress}</td><td>${counts.planned}</td><td>${counts.blocked}</td><td>${counts.urgent.join(', ')}</td>`;
-    table.appendChild(tr);
   }
-  container.appendChild(table);
+  const lines = [
+    'flowchart LR',
+    `done["Gjort ${totals.done}"] --> progress["Nu ${totals.progress}"] --> planned["Plan ${totals.planned}"] --> blocked["Block ${totals.blocked}"]`,
+    'classDef done fill:#4caf50,stroke:#333,color:#fff;',
+    'classDef progress fill:#2196f3,stroke:#333,color:#fff;',
+    'classDef planned fill:#ccc,stroke:#333,color:#000;',
+    'classDef blocked fill:#f44336,stroke:#333,color:#fff;',
+    'class done done;',
+    'class progress progress;',
+    'class planned planned;',
+    'class blocked blocked;',
+    'click done "#/l1/projekt-hub" _self',
+    'click progress "#/l1/projekt-hub" _self',
+    'click planned "#/l1/projekt-hub" _self',
+    'click blocked "#/l1/projekt-hub" _self'
+  ];
+  container.textContent = lines.join('\n');
+  mermaid.init(undefined, container);
 }
 
 function renderMap(key) {
@@ -27,6 +62,7 @@ function renderMap(key) {
   const map = maps[key];
   if (!map) {
     container.textContent = `Saknar karta: ${key}`;
+    showToast(`404 ${key}`);
     return;
   }
   const lines = ['flowchart LR'];
@@ -61,16 +97,15 @@ function renderMap(key) {
     if (n.video) {
       const el = document.getElementById(n.id);
       if (el) {
-        el.addEventListener('mouseenter', e => {
-          videoPopup.src = n.video;
-          videoPopup.style.left = e.pageX + 'px';
-          videoPopup.style.top = e.pageY + 'px';
-          videoPopup.style.display = 'block';
-          videoPopup.play();
-        });
-        el.addEventListener('mouseleave', () => {
-          videoPopup.pause();
-          videoPopup.style.display = 'none';
+        el.addEventListener('click', e => {
+          e.preventDefault();
+          modalFallback.style.display = 'none';
+          modalVideo.src = n.video;
+          modalVideo.load();
+          modalVideo.play().catch(() => {
+            modalFallback.style.display = 'block';
+          });
+          videoModal.style.display = 'block';
         });
       }
     }
@@ -89,6 +124,7 @@ function render() {
 
 function highlightSearch() {
   const query = (searchEl.value || '').toLowerCase();
+  window.dispatchEvent(new CustomEvent('OS.search', { detail: query }));
   document.querySelectorAll('.glow').forEach(el => el.classList.remove('glow'));
   if (!query) return;
   const key = (location.hash || '/l1/projekt-hub').replace('#', '');
@@ -104,6 +140,7 @@ function highlightSearch() {
 }
 
 function playScenario() {
+  window.dispatchEvent(new Event('OS.scenario.play'));
   const key = (location.hash || '/l1/projekt-hub').replace('#', '');
   const map = maps[key];
   if (!map || !map.nodes) return;
@@ -120,6 +157,7 @@ function playScenario() {
 }
 
 window.addEventListener('hashchange', render);
+applyDeadlines();
 render();
 
 document.getElementById('home-btn').addEventListener('click', () => {
@@ -131,3 +169,9 @@ document.getElementById('back-btn').addEventListener('click', () => {
 
 searchEl.addEventListener('input', highlightSearch);
 document.getElementById('play-path').addEventListener('click', playScenario);
+document.getElementById('video-close').addEventListener('click', () => {
+  modalVideo.pause();
+  modalVideo.removeAttribute('src');
+  videoModal.style.display = 'none';
+  modalFallback.style.display = 'none';
+});

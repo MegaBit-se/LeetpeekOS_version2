@@ -1,9 +1,11 @@
 # LeetpeekOS v1.3 Project Summary
 
-**Phase 3 Update**: L2-playbooks, export och UX-funktioner implementerade.
+**Phase 4 Update**: Leetpeek-kontext (positionering, erbjudanden, varumärke, rekommendationer) integrerad.
 **Project Status**: Full v1.0 – system körbart och exporterat.
-**Last Updated**: 2025-09-01  
+**Last Updated**: 2025-09-01
 **Architecture**: 4-tier (L0 → L1 → L2 → OS) Mermaid-based static site with 3 major OS modules
+
+> Rekommenderad manuell deadline-check på vinnova.se, tillvaxtverket.se, europa.eu och raa.se.
 
 ## 1. INVENTORY
 
