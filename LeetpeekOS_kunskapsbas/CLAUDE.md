@@ -80,7 +80,7 @@ Use `/templates/html_boilerplate.html` as base for every page:
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Leetpeek OS</title>
-  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9/dist/mermaid.min.js"></script>
   <style>
     html,body{margin:0;padding:0}
     .wrap{padding:16px;max-width:1400px;margin:0 auto}
